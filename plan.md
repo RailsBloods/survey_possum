@@ -14,7 +14,7 @@
 
 New users can sign up:
 
-We get that info, style. Rails stores 
+We get that info, style. Rails stores
 
 ## User Stories:
 
@@ -22,6 +22,11 @@ We get that info, style. Rails stores
 
 ## Tasks:
 
+under app views layouts application.html.erb is going to be the main template page, and can put stuff here that we want to show up all the time (header/footer probably)
+
+
 ## Rails File Structure:
+
+is weird
 
 ## Heroku!!
