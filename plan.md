@@ -1,4 +1,4 @@
-# Rails Bloods 4 Lyfe!
+# Sunshine and Rainbows 4 Lyfe!
 
 ## Deliverables:
 
@@ -14,7 +14,7 @@
 
 New users can sign up:
 
-We get that info, style. Rails stores 
+We get that info, style. Rails stores
 
 ## User Stories:
 
