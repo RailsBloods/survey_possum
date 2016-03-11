@@ -1,0 +1,2 @@
+module YesNoQuestionsHelper
+end
