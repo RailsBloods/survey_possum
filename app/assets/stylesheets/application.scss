@@ -20,7 +20,8 @@
 //Styling for universal header and footer:
 .header {
    display: inline-block;
-   width: 100%
+   width: 100%;
+   background-color: $background-color;
 }
 
 .header-link {
@@ -29,8 +30,6 @@
 
 .header-link:hover {
    text-decoration: underline;
-   background-color: $background-color;
-   font-color: $font-color;
 }
 
 .header-left-links {
@@ -39,6 +38,10 @@
 
 .header-right-links {
    float: right;
+}
+
+.footer {
+   @extend header;
 }
 
 .footer-link {
