@@ -20,8 +20,7 @@
     <%= f.text_area :description %>
   </div>
   <div class="field">
-    <%= f.label :user_id %><br>
-    <%= f.number_field :user_id %>
+    <%= f.hidden_field :user_id, value: session[:user_id] %><br>
   </div>
 
   <h3>Yes/No Questions</h3>
@@ -34,7 +33,28 @@
     </div>
   <% end %>
 
+  <h3>Short Questions</h3>
+
+  <%= f.fields_for :short_questions do |ff| %>
+    <div>
+      <%= ff.number_field :question_number, placeholder: "Question Number" %>
+      <%= ff.text_field :question, placeholder: "Question" %>
+      <%= ff.text_area :description, placeholder: "Description" %>
+    </div>
+  <% end %>
+
+  <h3>Long Questions</h3>
+
+  <%= f.fields_for :long_questions do |ff| %>
+    <div>
+      <%= ff.number_field :question_number, placeholder: "Question Number" %>
+      <%= ff.text_field :question, placeholder: "Question" %>
+      <%= ff.text_area :description, placeholder: "Description" %>
+    </div>
+  <% end %>
+
   <div class="actions">
     <%= f.submit %>
   </div>
+
 <% end %>

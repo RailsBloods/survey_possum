@@ -33,10 +33,9 @@ gem 'bcrypt', '~> 3.1.7'
 # gem 'capistrano-rails', group: :development
 gem 'rails_12factor'
 
-gem 'puma'
-
 group :production do
   gem 'pg'
+  gem 'puma'
 end
 
 group :development, :test do
