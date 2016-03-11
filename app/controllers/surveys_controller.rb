@@ -9,6 +9,7 @@ class SurveysController < ApplicationController
 
   # GET /surveys/1
   def show
+    @answers = Answer.new
   end
 
   # GET /surveys/new
