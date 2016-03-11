@@ -56,6 +56,7 @@ class SurveysController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_survey
       @survey = Survey.find(params[:id])
+      unless @user.user_id == session[:user_id]
     end
 
     # Only allow a trusted parameter "white list" through.
