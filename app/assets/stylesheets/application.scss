@@ -1,0 +1,74 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+//style splash page and overall look here
+
+
+//these styles are universal
+
+$font-stack: 'Arimo', sans-serif;
+$background-color: #EEE;
+$primary-color: rgb(0,150,136);
+$button-color: rgb(34,150,243);
+$font-color: rgb(117,117,128);
+
+html {
+  font-size: 1em;
+  font-family: $font-stack;
+  background-color: $background-color;
+
+//Styling for universal header and footer:
+.header {
+   display: inline-block;
+   width: 100%;
+   background-color: $background-color;
+}
+
+.header-link {
+   text-decoration: none;
+}
+
+.header-link:hover {
+   text-decoration: underline;
+}
+
+.header-left-links {
+   float: left;
+}
+
+.header-right-links {
+   float: right;
+}
+
+.footer {
+   @extend .header;
+}
+
+.footer-link {
+   text-decoration: none;
+}
+
+.footer-link:hover {
+   @extend .header-link:hover;
+}
+
+.footer-left-links {
+   float: left;
+}
+
+.footer-right-links {
+   @extend .header-right-links;
+}}

@@ -5,10 +5,36 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+
+  <link href='https://fonts.googleapis.com/css?family=Arimo:400,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
 </head>
 <body>
-
+<header>
+   <nav class = "header">
+      <div class = "header-left-links">
+         <a href = "#" class = "header-link">Start Page</a>
+         <a href = "#" class = "header-link">Survey Page</a>
+      </div>
+      <div class = "header-right-links">
+         <a href = "#" class = "header-link">Add a Survey</a>
+         <a href = "#" class = "header-link">Something Else</a>
+      </div>
+   </nav>
+</header>
 <%= yield %>
-
+<footer>
+   <nav class = "footer">
+      <div class = "footer-left-links">
+         <a href = "#" class = "footer-link">Start Page</a>
+         <a href = "#" class = "footer-link">Survey Page</a>
+      </div>
+      <div class = "footer-right-links">
+         <a href = "#" class = "footer-link">Add a Survey</a>
+         <a href = "#" class = "footer-link">Something Else</a>
+      </div>
+   </nav>
+</footer>
 </body>
 </html>

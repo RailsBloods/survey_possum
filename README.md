@@ -1,28 +1,10 @@
-== README
+# SurveyPossum
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Description
+A survey creation app that allows users to create survey and collect responses. Please review this <a href="https://www.lucidchart.com/documents/edit/b6d407d2-69e7-4012-9831-f5187d39e1e7?shared=true&">ERD diagram </a>to view the table relationships.
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+## Usage
+```Ruby
+Code goes here
+```
+Explore SurveyPossum on <a href="https://aqueous-falls-31494.herokuapp.com/">Heroku</a> today!
