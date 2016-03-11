@@ -1,19 +1,26 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Title:</strong>
+  <strong>Survey Title:</strong>
   <%= @survey.title %>
 </p>
 
 <p>
-  <strong>Description:</strong>
+  <strong>Survey Description:</strong>
   <%= @survey.description %>
 </p>
 
-<p>
-  <strong>User:</strong>
-  <%= @survey.user_id %>
-</p>
+<%=form_for(@survey) do |f| %>
 
+  <% @survey.questions.each do |q| %>
+      <div>
+        <%= q.question_text %>
+        <%= q.description %>
+      </div>
+  <% end %>
+
+<% end %>
+
+<br><br>
 <%= link_to 'Edit', edit_survey_path(@survey) %> |
 <%= link_to 'Back', surveys_path %>

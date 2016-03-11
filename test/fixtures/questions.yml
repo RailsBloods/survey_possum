@@ -3,13 +3,13 @@
 one:
   survey_id: 1
   question_number: 1
-  question: MyText
-  response: false
+  question_text: MyText
   description: MyText
+  type: 
 
 two:
   survey_id: 1
   question_number: 1
-  question: MyText
-  response: false
+  question_text: MyText
   description: MyText
+  type: 
