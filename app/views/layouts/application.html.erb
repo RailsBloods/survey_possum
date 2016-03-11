@@ -20,10 +20,12 @@
       <div class = "header-right-links">
          <a href = "#" class = "header-link">Add a Survey</a>
          <a href = "#" class = "header-link">Something Else</a>
+         <p><%= link_to 'Logout', logout_path %></p>
       </div>
    </nav>
 </header>
 <%= yield %>
+<p><%= link_to 'Logout', logout_path %></p>
 <footer>
    <nav class = "footer">
       <div class = "footer-left-links">
