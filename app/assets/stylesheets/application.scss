@@ -28,6 +28,7 @@ html {
   font-size: 1em;
   font-family: $font-stack;
   background-color: $background-color;
+}
 
 //Styling for universal header and footer:
 .header {
@@ -58,7 +59,7 @@ html {
 }
 
 .footer-link:hover {
-   @extend header-link:hover;
+   @extend .header-link:hover;
 }
 
 .footer-left-links {
