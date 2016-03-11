@@ -53,7 +53,8 @@ class SurveysController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_survey
       @survey = Survey.find(params[:id])
-      unless @user.user_id == session[:user_id]
+      unless @survey.user_id == session[:user_id]
+        redirect_to :back
       end
     end
 

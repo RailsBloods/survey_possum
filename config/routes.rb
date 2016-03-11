@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
   resources :questions
-  root 'sessions#new'
+  root 'sessions#dashboard'
 
   get 'login' => 'sessions#new'
   post 'login' => 'sessions#create'
