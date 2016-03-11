@@ -11,7 +11,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160310213822) do
+ActiveRecord::Schema.define(version: 20160310232236) do
+
+  create_table "long_questions", force: :cascade do |t|
+    t.integer  "survey_id"
+    t.integer  "question_number"
+    t.text     "question"
+    t.text     "response"
+    t.text     "description"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
+
+  create_table "short_questions", force: :cascade do |t|
+    t.integer  "survey_id"
+    t.integer  "question_number"
+    t.text     "question"
+    t.text     "response"
+    t.text     "description"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
 
   create_table "surveys", force: :cascade do |t|
     t.string   "title"
@@ -25,6 +45,16 @@ ActiveRecord::Schema.define(version: 20160310213822) do
     t.string   "name"
     t.string   "email"
     t.string   "password_digest"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
+
+  create_table "yes_no_questions", force: :cascade do |t|
+    t.integer  "survey_id"
+    t.integer  "question_number"
+    t.text     "question"
+    t.boolean  "response"
+    t.text     "description"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
   end
