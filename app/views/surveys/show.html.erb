@@ -12,23 +12,9 @@
 
 <%=form_for(@survey) do |f| %>
 
-  <% @survey.yes_no_questions.each do |q| %>
+  <% @survey.questions.each do |q| %>
       <div>
-        <%= q.question %>
-        <%= q.description %>
-      </div>
-  <% end %>
-
-  <% @survey.short_questions.each do |q| %>
-      <div>
-        <%= q.question %>
-        <%= q.description %>
-      </div>
-  <% end %>
-
-  <% @survey.long_questions.each do |q| %>
-      <div>
-        <%= q.question %>
+        <%= q.question_text %>
         <%= q.description %>
       </div>
   <% end %>
