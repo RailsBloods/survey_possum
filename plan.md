@@ -29,6 +29,9 @@ under app views layouts application.html.erb is going to be the main template pa
 
 ## Rails File Structure:
 
-is weird
+is awesome.
+To Start The Server: `bin/rails server`
+To Migrate for the Server: `bin/rake db:migrate`
+
 
 ## Heroku!!

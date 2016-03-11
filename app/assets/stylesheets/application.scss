@@ -13,3 +13,87 @@
  *= require_tree .
  *= require_self
  */
+
+//style splash page and overall look here
+
+
+//these styles are universal
+
+$font-stack: 'Arimo', sans-serif;
+$background-color: white;
+$primary-color: rgb(0,150,136);
+$button-color: rgb(34,150,243);
+$font-color: rgb(117,117,128);
+
+html {
+  font-size: 1em;
+  font-family: $font-stack;
+  background-color: $background-color;
+  color: $font-color;
+
+}
+//Styling for universal header and footer:
+.header {
+   display: inline-block;
+   width: 100%;
+   background-color: $primary-color;
+   padding: 1.5em 1em;
+}
+
+.header-link {
+   text-decoration: none;
+   color: white;
+}
+
+.header-link:hover {
+   text-decoration: underline;
+   background-color: $primary-color;
+}
+
+.header-left-links {
+   float: left;
+}
+
+.header-right-links {
+   float: right;
+}
+
+.footer {
+   @extend .header;
+}
+
+.footer-link {
+   text-decoration: none;
+   color: white;
+}
+
+.footer-link:hover {
+   @extend .header-link:hover;
+}
+
+.footer-left-links {
+   float: left;
+}
+
+.footer-right-links {
+   @extend .header-right-links;
+}
+
+// Log In Page:
+body {
+   padding: 2em 2em 0 2em;
+   background-color: $background-color;
+   color: $font-color;
+}
+
+h1 {
+   text-align: center;
+}
+
+form {
+   padding-bottom: 2em;
+}
+
+#check h2 {
+   // background-color: red;
+}
