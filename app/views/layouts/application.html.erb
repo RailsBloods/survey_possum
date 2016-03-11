@@ -7,10 +7,12 @@
   <%= csrf_meta_tags %>
 
   <link href='https://fonts.googleapis.com/css?family=Arimo:400,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
 </head>
 <body>
 <header>
-   <nav>
+   <nav class = "header">
       <div class = "header-left-links">
          <a href = "#" class = "header-link">Start Page</a>
          <a href = "#" class = "header-link">Survey Page</a>
@@ -23,7 +25,7 @@
 </header>
 <%= yield %>
 <footer>
-   <nav>
+   <nav class = "footer">
       <div class = "footer-left-links">
          <a href = "#" class = "footer-link">Start Page</a>
          <a href = "#" class = "footer-link">Survey Page</a>

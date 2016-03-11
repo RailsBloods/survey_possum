@@ -28,4 +28,43 @@ html {
   font-size: 1em;
   font-family: $font-stack;
   background-color: $background-color;
+
+//Styling for universal header and footer:
+.header {
+   display: inline-block;
+   width: 100%
+}
+
+.header-link {
+   text-decoration: none;
+}
+
+.header-link:hover {
+   text-decoration: underline;
+   background-color: $background-color;
+   font-color: $font-color;
+}
+
+.header-left-links {
+   float: left;
+}
+
+.header-right-links {
+   float: right;
+}
+
+.footer-link {
+   text-decoration: none;
+}
+
+.footer-link:hover {
+   @extend header-link:hover;
+}
+
+.footer-left-links {
+   float: left;
+}
+
+.footer-right-links {
+   float: right;
 }
