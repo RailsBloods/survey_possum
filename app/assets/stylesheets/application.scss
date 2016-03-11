@@ -30,8 +30,9 @@ html {
   font-family: $font-stack;
   background-color: $background-color;
   color: $font-color;
-
 }
+
+
 //Styling for universal header and footer:
 .header {
    display: inline-block;
@@ -78,6 +79,7 @@ html {
 .footer-right-links {
    @extend .header-right-links;
 }
+<<<<<<< HEAD
 
 // Log In Page:
 body {

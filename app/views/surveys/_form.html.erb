@@ -16,40 +16,21 @@
     <%= f.text_field :title %>
   </div>
   <div class="field">
-    <%= f.label :description %><br>
+    <%= f.label "Survey Description (Optional)" %><br>
     <%= f.text_area :description %>
   </div>
   <div class="field">
     <%= f.hidden_field :user_id, value: session[:user_id] %><br>
   </div>
 
-  <h3>Yes/No Questions</h3>
+  <h3>Questions</h3>
 
-  <%= f.fields_for :yes_no_questions do |ff| %>
+  <%= f.fields_for :questions do |ff| %>
     <div>
       <%= ff.number_field :question_number, placeholder: "Question Number" %>
-      <%= ff.text_field :question, placeholder: "Question" %>
-      <%= ff.text_area :description, placeholder: "Description" %>
-    </div>
-  <% end %>
-
-  <h3>Short Questions</h3>
-
-  <%= f.fields_for :short_questions do |ff| %>
-    <div>
-      <%= ff.number_field :question_number, placeholder: "Question Number" %>
-      <%= ff.text_field :question, placeholder: "Question" %>
-      <%= ff.text_area :description, placeholder: "Description" %>
-    </div>
-  <% end %>
-
-  <h3>Long Questions</h3>
-
-  <%= f.fields_for :long_questions do |ff| %>
-    <div>
-      <%= ff.number_field :question_number, placeholder: "Question Number" %>
-      <%= ff.text_field :question, placeholder: "Question" %>
-      <%= ff.text_area :description, placeholder: "Description" %>
+      <%= ff.select :question_type, ['Yes/No', 'Short Answer', 'Long Answer'] %>
+      <%= ff.text_field :question_text, placeholder: "Question" %>
+      <%= ff.text_area :description, placeholder: "Description (Optional)" %>
     </div>
   <% end %>
 
