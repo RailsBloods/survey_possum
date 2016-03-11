@@ -5,10 +5,14 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+
+  <link href='https://fonts.googleapis.com/css?family=Arimo:400,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
 </head>
 <body>
 <header>
-   <nav>
+   <nav class = "header">
       <div class = "header-left-links">
          <a href = "#" class = "header-link">Start Page</a>
          <a href = "#" class = "header-link">Survey Page</a>
@@ -16,12 +20,14 @@
       <div class = "header-right-links">
          <a href = "#" class = "header-link">Add a Survey</a>
          <a href = "#" class = "header-link">Something Else</a>
+         <p><%= link_to 'Logout', logout_path %></p>
       </div>
    </nav>
 </header>
 <%= yield %>
+<p><%= link_to 'Logout', logout_path %></p>
 <footer>
-   <nav>
+   <nav class = "footer">
       <div class = "footer-left-links">
          <a href = "#" class = "footer-link">Start Page</a>
          <a href = "#" class = "footer-link">Survey Page</a>
