@@ -44,6 +44,7 @@ html {
 .header-link {
    text-decoration: none;
    color: white;
+   display: inline-block;
 }
 
 .header-link:hover {
@@ -57,6 +58,11 @@ html {
 
 .header-right-links {
    float: right;
+}
+
+.header-right-links > p{
+   display: inline-block;
+   color: white;
 }
 
 .footer {
@@ -76,9 +82,31 @@ html {
    float: left;
 }
 
+.footer-left-links > p {
+   display: inline-block;
+   color: white;
+}
+
 .footer-right-links {
    @extend .header-right-links;
 }
+<<<<<<< HEAD
+=======
+
+.footer-right-links > p {
+   display: inline-block;
+   color: white;
+}
+
+#logout a {
+   @extend .header-link;
+}
+
+#logout {
+   display: inline;
+}
+
+>>>>>>> master
 
 // Log In Page:
 body {
@@ -87,7 +115,12 @@ body {
    color: $font-color;
 }
 
-h1 {
+#landing-page-form {
+   width: 30%;
+   line-height: 2em;
+}
+
+#landing-page-form h1 {
    text-align: center;
 }
 
@@ -95,6 +128,10 @@ form {
    padding-bottom: 2em;
 }
 
-#check h2 {
-   // background-color: red;
+#landing-page-form form > input{
+   background-color: $button-color;
+   color: $background-color;
+   border: none;
+   border-radius: 3px;
+   padding: 0.5em;
 }
