@@ -23,6 +23,17 @@
     <%= f.label :user_id %><br>
     <%= f.number_field :user_id %>
   </div>
+
+  <h3>Yes/No Questions</h3>
+
+  <%= f.fields_for :yes_no_questions do |ff| %>
+    <div>
+      <%= ff.number_field :question_number, placeholder: "Question Number" %>
+      <%= ff.text_field :question, placeholder: "Question" %>
+      <%= ff.text_area :description, placeholder: "Description" %>
+    </div>
+  <% end %>
+
   <div class="actions">
     <%= f.submit %>
   </div>
