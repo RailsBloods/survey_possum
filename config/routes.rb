@@ -7,54 +7,6 @@ Rails.application.routes.draw do
   post 'login' => 'sessions#create'
   get 'logout' => 'sessions#destroy'
 
-  get 'yes_no_questions/show'
-
-  get 'yes_no_questions/new'
-
-  get 'yes_no_questions/create'
-
-  get 'yes_no_questions/update'
-
-  get 'yes_no_questions/edit'
-
-  get 'yes_no_questions/destroy'
-
-  get 'long_questions/show'
-
-  get 'long_questions/new'
-
-  get 'long_questions/create'
-
-  get 'long_questions/update'
-
-  get 'long_questions/edit'
-
-  get 'long_questions/destroy'
-
-  get 'short_questions/show'
-
-  get 'short_questions/new'
-
-  get 'short_questions/create'
-
-  get 'short_questions/update'
-
-  get 'short_questions/edit'
-
-  get 'short_questions/destroy'
-
-  get 'yes_no_question/show'
-
-  get 'yes_no_question/new'
-
-  get 'yes_no_question/create'
-
-  get 'yes_no_question/update'
-
-  get 'yes_no_question/edit'
-
-  get 'yes_no_question/destroy'
-
   resources :surveys
   resources :users
   # The priority is based upon order of creation: first created -> highest priority.
