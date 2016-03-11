@@ -28,7 +28,7 @@
   <%= f.fields_for :questions do |ff| %>
     <div>
       <%= ff.number_field :question_number, placeholder: "Question Number" %>
-      <%= ff.select :type, [['Yes/No','Yes/No'], 'Short Answer', 'Long Answer'] %>
+      <%= ff.select :question_type, ['Yes/No', 'Short Answer', 'Long Answer'] %>
       <%= ff.text_field :question_text, placeholder: "Question" %>
       <%= ff.text_area :description, placeholder: "Description (Optional)" %>
     </div>
