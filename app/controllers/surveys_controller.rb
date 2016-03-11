@@ -54,6 +54,7 @@ class SurveysController < ApplicationController
     def set_survey
       @survey = Survey.find(params[:id])
       unless @user.user_id == session[:user_id]
+      end
     end
 
     # Only allow a trusted parameter "white list" through.
