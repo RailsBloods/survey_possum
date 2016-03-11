@@ -20,7 +20,7 @@
 //these styles are universal
 
 $font-stack: 'Arimo', sans-serif;
-$background-color: #EEE;
+$background-color: white;
 $primary-color: rgb(0,150,136);
 $button-color: rgb(34,150,243);
 $font-color: rgb(117,117,128);
@@ -29,21 +29,27 @@ html {
   font-size: 1em;
   font-family: $font-stack;
   background-color: $background-color;
+  color: $font-color;
 }
+
 
 //Styling for universal header and footer:
 .header {
    display: inline-block;
    width: 100%;
-   background-color: $background-color;
+   background-color: $primary-color;
+   padding: 1.5em 1em;
 }
 
 .header-link {
    text-decoration: none;
+   color: white;
+   display: inline-block;
 }
 
 .header-link:hover {
    text-decoration: underline;
+   background-color: $primary-color;
 }
 
 .header-left-links {
@@ -54,12 +60,18 @@ html {
    float: right;
 }
 
+.header-right-links > p{
+   display: inline-block;
+   color: white;
+}
+
 .footer {
    @extend .header;
 }
 
 .footer-link {
    text-decoration: none;
+   color: white;
 }
 
 .footer-link:hover {
@@ -70,6 +82,53 @@ html {
    float: left;
 }
 
+.footer-left-links > p {
+   display: inline-block;
+   color: white;
+}
+
 .footer-right-links {
    @extend .header-right-links;
+}
+
+.footer-right-links > p {
+   display: inline-block;
+   color: white;
+}
+
+#logout a {
+   @extend .header-link;
+}
+
+#logout {
+   display: inline;
+}
+
+
+// Log In Page:
+body {
+   padding: 2em 2em 0 2em;
+   background-color: $background-color;
+   color: $font-color;
+}
+
+#landing-page-form {
+   width: 30%;
+   line-height: 2em;
+}
+
+#landing-page-form h1 {
+   text-align: center;
+}
+
+form {
+   padding-bottom: 2em;
+}
+
+#landing-page-form form > input{
+   background-color: $button-color;
+   color: $background-color;
+   border: none;
+   border-radius: 3px;
+   padding: 0.5em;
 }
