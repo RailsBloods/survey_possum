@@ -3,11 +3,11 @@
 one:
   question_number: 1
   question_response: MyString
-  survey_id: 1
   taker_id: 1
+  question_id: 1
 
 two:
   question_number: 1
   question_response: MyString
-  survey_id: 1
   taker_id: 1
+  question_id: 1
