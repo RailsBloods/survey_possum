@@ -15,21 +15,11 @@ ActiveRecord::Schema.define(version: 20160311181612) do
 
   create_table "answers", force: :cascade do |t|
     t.integer  "question_number"
-    t.string   "question_response"
-    t.integer  "survey_id"
+    t.text     "question_response"
+    t.integer  "question_id"
     t.integer  "taker_id"
     t.datetime "created_at",        null: false
     t.datetime "updated_at",        null: false
-  end
-
-  create_table "long_questions", force: :cascade do |t|
-    t.integer  "survey_id"
-    t.integer  "question_number"
-    t.text     "question"
-    t.text     "response"
-    t.text     "description"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
   end
 
   create_table "questions", force: :cascade do |t|
@@ -38,16 +28,6 @@ ActiveRecord::Schema.define(version: 20160311181612) do
     t.text     "question_text"
     t.text     "description"
     t.string   "question_type"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
-  end
-
-  create_table "short_questions", force: :cascade do |t|
-    t.integer  "survey_id"
-    t.integer  "question_number"
-    t.text     "question"
-    t.text     "response"
-    t.text     "description"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
   end
@@ -71,16 +51,6 @@ ActiveRecord::Schema.define(version: 20160311181612) do
     t.string   "name"
     t.string   "email"
     t.string   "password_digest"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
-  end
-
-  create_table "yes_no_questions", force: :cascade do |t|
-    t.integer  "survey_id"
-    t.integer  "question_number"
-    t.text     "question"
-    t.boolean  "response"
-    t.text     "description"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
   end
