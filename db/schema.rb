@@ -18,7 +18,6 @@ ActiveRecord::Schema.define(version: 20160311210018) do
     t.text     "question_response"
     t.integer  "question_id"
     t.integer  "taker_id"
-    t.integer  "question_id"
     t.datetime "created_at",        null: false
     t.datetime "updated_at",        null: false
   end

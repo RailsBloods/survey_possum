@@ -10,12 +10,12 @@
   <%= @survey.description %>
 </p>
 
-<%= form_for @survey, url: answer_create_path do |f| %>
+<%= form_for @survey, url: answers_path do |f| %>
   <% @survey.questions.each do |q| %>
     <div>
     <%= q.question_text %>
     <%= q.description %>
-      <%= f.fields_for :answers do |ff| %>
+      <%= f.fields_for :answers, @survey.answers.build do |ff| %>
         <% if q.question_type == "Yes/No" %>
           <%= ff.label :question_response, 'Yes' %>
           <%= ff.radio_button :question_response, 'Yes', :value => 'Yes'%>
@@ -26,6 +26,7 @@
         <% elsif q.question_type == "Long Answer" %>
           <%= ff.text_area :question_response, placeholder: 'Long Answer' %>
         <% end %>
+        <%= ff.hidden_field :question_id, value: q.id %>
       <% end %>
     </div>
   <% end %>

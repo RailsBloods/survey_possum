@@ -21,13 +21,13 @@ class AnswersController < ApplicationController
 
   # POST /answers
   def create
-    @answer = Answer.new(answer_params)
-
-    if @answer.save
-      redirect_to @answer, notice: 'Answer was successfully created.'
-    else
-      render :new
+    answers = params[:survey][:answers_attributes]
+    answers.each do |a|
+      response = a[1]
+      Answer.create!(question_number: (a[0].to_i + 1), question_response: response["question_response"], question_id: response["question_id"])
     end
+
+    redirect_to root_path, notice: 'Survey was successfully submitted.'
   end
 
   # PATCH/PUT /answers/1
