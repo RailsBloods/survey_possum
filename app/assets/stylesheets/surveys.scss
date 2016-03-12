@@ -9,38 +9,36 @@ $background-color: #EEE;
 $primary-color: rgb(0,150,136);
 $button-color: rgb(34,150,243);
 $font-color: rgb(117,117,128);
-$width-surveys: 90%;
-$margin-surveys: 5%;
+$width-surveys: 1310px;
+$margin-surveys: 0;
 
-// $breakpoints: (
-//   'phone': (max-width: 700px),
-//   'medium': (max-width: 1000px),
-//   'large': (min-width: 1001px),
-// );
+$breakpoints: (
+  'phone': (max-width: 700px),
+  'medium': (max-width: 1000px),
+  'large': (min-width: 1001px),
+);
 // SOURCED FROM: http://sass-guidelin.es/#responsive-web-design-and-breakpoints
 
-// @mixin respond-to($breakpoint) {
-//   $raw-query: map-get($breakpoints, $breakpoint);
-//
-//   @if $raw-query {
-//     $query: if(
-//       type-of($raw-query) == 'string',
-//       unquote($raw-query),
-//       inspect($raw-query)
-//     );
-//
-//     @media #{$query} {
-//       @content;
-//     }
-//   } @else {
-//     @error 'No value found for `#{$breakpoint}`. '
-//          + 'Please make sure it is defined in `$breakpoints` map.';
-//   }
-// }
+@mixin respond-to($breakpoint) {
+  $raw-query: map-get($breakpoints, $breakpoint);
+
+  @if $raw-query {
+    $query: if(
+      type-of($raw-query) == 'string',
+      unquote($raw-query),
+      inspect($raw-query)
+    );
+
+    @media #{$query} {
+      @content;
+    }
+  } @else {
+    @error 'No value found for `#{$breakpoint}`. '
+         + 'Please make sure it is defined in `$breakpoints` map.';
+  }
+}
 
 // SOURCED FROM: http://sass-guidelin.es/#responsive-web-design-and-breakpoints
-
-
 
 
 .list-survey.user-profile-page { //all the surveys
@@ -48,36 +46,54 @@ $margin-surveys: 5%;
   width: $width-surveys;
   list-style-type: none;
   margin-left: $margin-surveys;
+  padding-left: 0;
+
+  @include respond-to('medium') {
+    max-width: $width-surveys/2;
+  }
+
+  @include respond-to('phone') {
+    width: $width-surveys;
+  }
 }
+
 
 .survey-box{ //each survey box
   border: 1px solid black;
-  max-width: $width-surveys/3;
-  padding-top: $width-surveys/12;
-  padding-bottom: $width-surveys/12;
-  margin-left: -2px;
-  margin-right: -2px;
+  max-width: $width-surveys/3.1;
   display: inline-block;
   text-align: center;
+  padding-top: 1em;
 
-  // @include respond-to('medium') {
-  //   min-width: $width-surveys/2;
-  //   padding-top: $width-surveys/6;
-  //   padding-bottom: $width-surveys/6;
-  // }
-  //
-  // @include respond-to('phone') {
-  //   width: $width-surveys;
-  //   padding-top: $width-surveys/3;
-  //   padding-bottom: $width-surveys/3;
-  // }
+  @include respond-to('medium') {
+    max-width: $width-surveys/2;
+    padding-top: 1em;
+
+  }
+
+  @include respond-to('phone') {
+    width: $width-surveys;
+    padding-top: 1em;
+
+  }
 }
 
-.survey-title.user-profile-page {
+.survey-title.user-profile-page { //title of surveys
   padding-top: 5px;
-  width: $width-surveys;
-  margin-left: 5%;
+  width: $width-surveys/3.1;
   color: $font-color;
   border-top: solid 3px $primary-color;
-  // -webkit-transition: border 0.3s ease;
+  -webkit-transition: border 0.3s ease;
+
+  @include respond-to('medium') {
+    max-width: $width-surveys/2;
+  }
+
+  @include respond-to('phone') {
+    width: $width-surveys;
+  }
+}
+
+.show-container a{
+  color: red;
 }
