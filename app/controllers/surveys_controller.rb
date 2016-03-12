@@ -1,6 +1,6 @@
 class SurveysController < ApplicationController
   before_action :logged_in?, except: [:show]
-  before_action :set_survey, only: [:show, :edit, :update, :destroy]
+  before_action :set_survey, only: [:edit, :update, :destroy]
 
   # GET /surveys
   def index
@@ -9,8 +9,7 @@ class SurveysController < ApplicationController
 
   # GET /surveys/1
   def show
-    # @taker = Taker.new
-    # @survey.questions.build
+    @survey = Survey.find(params[:id])
     @survey.answers.build
   end
 
