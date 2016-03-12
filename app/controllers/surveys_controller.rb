@@ -4,7 +4,7 @@ class SurveysController < ApplicationController
 
   # GET /surveys
   def index
-    @surveys = Survey.all
+    @surveys = Survey.where(user_id: session[:user_id])
   end
 
   # GET /surveys/1
