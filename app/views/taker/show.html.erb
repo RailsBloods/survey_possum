@@ -1,0 +1,42 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Survey Title:</strong>
+  <%= @survey.title %>
+</p>
+
+<p>
+  <strong>Survey Description:</strong>
+  <%= @survey.description %>
+</p>
+
+<%= form_for @survey, url: answers_path do |f| %>
+  <% @survey.questions.each do |q| %>
+    <div>
+    <%= q.question_text %>
+    <%= q.description %>
+      <%= f.fields_for :answers, @survey.answers.build do |ff| %>
+        <% if q.question_type == "Yes/No" %>
+          <%= ff.label :question_response, 'Yes' %>
+          <%= ff.radio_button :question_response, 'Yes', :value => 'Yes'%>
+          <%= ff.label :question_response, 'No' %>
+          <%= ff.radio_button :question_response, 'No', :value => 'No' %>
+        <% elsif q.question_type == "Short Answer" %>
+          <%= ff.text_field :question_response, placeholder: 'Short Answer' %>
+        <% elsif q.question_type == "Long Answer" %>
+          <%= ff.text_area :question_response, placeholder: 'Long Answer' %>
+        <% end %>
+        <%= ff.hidden_field :question_id, value: q.id %>
+      <% end %>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+
+<% end %>
+
+<br><br>
+<%= link_to 'Edit', edit_survey_path(@survey) %> |
+<%= link_to 'Back', surveys_path %>
