@@ -1,3 +1,15 @@
-// # Place all the behaviors and hooks related to the matching controller here.
-// # All this logic will automatically be available in application.js.
-// # You can use CoffeeScript in this file: http://coffeescript.org/
+$(function(){
+'use strict';
+
+var clickCounter = 1;
+
+$(".question-button").on("click", function(){
+   console.log('hello');
+   $(".unordered-list").append('<li class="question-selector"><input placeholder="Question Number" type="number" name="survey[questions_attributes]['+clickCounter+'][question_number]" id="survey_questions_attributes_'+clickCounter+'_question_number"><select name="survey[questions_attributes]['+clickCounter+'][question_type]" id="survey_questions_attributes_'+clickCounter+'_question_type"><option value="Yes/No">Yes/No</option><option value="Short Answer">Short Answer</option><option value="Long Answer">Long Answer</option></select><input placeholder="Question" type="text" name="survey[questions_attributes]['+clickCounter+'][question_text]" id="survey_questions_attributes_'+clickCounter+'_question_text"><textarea placeholder="Description (Optional)" name="survey[questions_attributes]['+clickCounter+'][description]" id="survey_questions_attributes_'+clickCounter+'_description"></textarea></li>');
+   clickCounter++;
+   console.log(clickCounter);
+});
+
+
+// $(".question-selector").append($('<li class="question-selector"<input placeholder="Question Number" type="number" name="survey[questions_attributes][0][question_number]" id="survey_questions_attributes_0_question_number"></li>'));
+});//end of line

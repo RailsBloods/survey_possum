@@ -24,18 +24,20 @@
   </div>
 
   <h3>Questions</h3>
-
-  <%= f.fields_for :questions do |ff| %>
-    <div>
-      <%= ff.number_field :question_number, placeholder: "Question Number" %>
-      <%= ff.select :question_type, ['Yes/No', 'Short Answer', 'Long Answer'] %>
-      <%= ff.text_field :question_text, placeholder: "Question" %>
-      <%= ff.text_area :description, placeholder: "Description (Optional)" %>
-    </div>
-  <% end %>
+  <ul class = "unordered-list">
+     <li class = "question-selector">
+        <%= f.fields_for :questions do |ff| %>
+            <%= ff.number_field :question_number, placeholder: "Question Number" %>
+            <%= ff.select :question_type, ['Yes/No', 'Short Answer', 'Long Answer'] %>
+            <%= ff.text_field :question_text, placeholder: "Question" %>
+            <%= ff.text_area :description, placeholder: "Description (Optional)" %>
+         <% end %>
+      </li>
+   </ul>
 
   <div class="actions">
     <%= f.submit %>
   </div>
+  <div class = "question-button">Add Question</div>
 
 <% end %>
