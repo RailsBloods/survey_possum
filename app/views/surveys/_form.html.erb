@@ -30,9 +30,14 @@
       <%= ff.number_field :question_number, placeholder: "Question Number" %>
       <%= ff.select :question_type, ['Choose','Yes/No', 'Short Answer', 'Long Answer'] %>
       <%= ff.text_field :question_text, placeholder: "Question" %>
-      <%= ff.text_area :description, placeholder: "Description (Optional)" %>
+      <%= ff.text_area :description, placeholder: "Description (Optional)" %><br>
+      <%= ff.label :required, "Required" %>
+      <%= ff.check_box :required  %>
     </div>
   <% end %>
+
+  <%= f.label :publish, "Ready to publish?" %>
+  <%= f.check_box :publish%>
 
   <div class="actions">
     <%= f.submit %>
