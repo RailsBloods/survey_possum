@@ -1,6 +1,6 @@
 $(function(){
 'use strict';
-
+console.log('work');
 var clickCounter = 1;
 
 $(".question-button").on("click", function(){
