@@ -16,10 +16,10 @@
       <div class = "header-left-links">
          <a href = "#" class = "header-link"><i class="fa fa-line-chart"></i>
 </a>
-         <a href = "#" class = "header-link">Survey Page</a>
+         <%= link_to 'Survey Page', surveys_path, {style: 'color: white', class: 'header-link'} %>
       </div>
       <div class = "header-right-links">
-         <a href = "#" class = "header-link">Add a Survey</a>
+         <%= link_to 'Add a Survey', new_survey_path, {style: 'color: white', class: 'header-link'} %>
          <p>|</p>
          <a href = "#" class = "header-link">About</a>
          <p id = "logout"><%= link_to 'Logout', logout_path %></p>
@@ -35,12 +35,12 @@
 <footer>
    <nav class = "footer">
       <div class = "footer-left-links">
-         <a href = "#" class = "footer-link">Start Page</a>
+         <%= link_to 'Start Page', root_path, {style: 'color: white', class: 'footer-link'}  %>
          <p>|</p>
-         <a href = "#" class = "footer-link">Survey Page</a>
+         <%= link_to 'Survey Page', surveys_path, {style: 'color: white', class: 'footer-link'} %>
       </div>
       <div class = "footer-right-links">
-         <a href = "#" class = "footer-link">Add a Survey</a>
+         <%= link_to 'Add a Survey', new_survey_path, {style: 'color: white', class: 'footer-link'} %>
          <p>|</p>
          <a href = "#" class = "footer-link">About</a>
       </div>
