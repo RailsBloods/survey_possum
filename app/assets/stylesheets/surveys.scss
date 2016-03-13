@@ -5,7 +5,7 @@
 //surveys page - this will style the page with all of the survey's listed
 
 $font-stack: 'Arimo', sans-serif;
-$background-color: #EEE;
+$background-color: white;
 $primary-color: rgb(0,150,136);
 $button-color: rgb(34,150,243);
 $font-color: rgb(117,117,128);
@@ -40,42 +40,85 @@ $breakpoints: (
 
 // SOURCED FROM: http://sass-guidelin.es/#responsive-web-design-and-breakpoints
 
+.title-survey-dashboard { //title of user profile page
+  text-align: center;
+  margin-bottom: 1em;
+
+  @include respond-to('phone') {
+    max-width: 450px;
+  }
+}
+
+#survey-menu-bar { //menu icon
+  color: $button-color;
+}
+
+.left-survey-nav{ //container for left menu
+  display: none;
+  position: absolute;
+  width: 100px;
+}
+
+.left-survey-nav.show { //shows left menu
+  position: absolute;
+  display: block;
+  width: 100px;
+  background-color: white;
+}
+
+
 
 .list-survey.user-profile-page { //all the surveys
-  border: 1px solid red;
   width: $width-surveys;
   list-style-type: none;
   margin-left: $margin-surveys;
   padding-left: 0;
 
   @include respond-to('medium') {
-    max-width: $width-surveys/2;
+    min-width: 850px;
+    max-width: 1000px;
   }
 
   @include respond-to('phone') {
-    width: $width-surveys;
+    max-width: 100%;
   }
 }
 
 
 .survey-box{ //each survey box
-  border: 1px solid black;
   max-width: $width-surveys/3.1;
   display: inline-block;
   text-align: center;
   padding-top: 1em;
 
   @include respond-to('medium') {
-    max-width: $width-surveys/2;
+    width: $width-surveys/2;
     padding-top: 1em;
 
   }
 
   @include respond-to('phone') {
-    width: $width-surveys;
+    width: 100%;
     padding-top: 1em;
 
   }
+}
+
+.survey-box.hover{
+  background-color: rgb(240,240,240);
+}
+
+.survey-title.user-profile-page.hover {
+  @extend .survey-box.hover;
+  border-top: none;
+  border-bottom: solid 3px $primary-color;
+}
+
+survey-description.hover {
+  visibility: visible;
+  @extend .survey-box.hover;
+  text-align: center;
+  font-size: 1.5em;
 }
 
 .survey-title.user-profile-page { //title of surveys
@@ -90,10 +133,26 @@ $breakpoints: (
   }
 
   @include respond-to('phone') {
-    width: $width-surveys;
+    width: 100%;
   }
 }
 
-.show-container a{
-  color: red;
+.all-survey-box-links { //all the show,hide,edit,destroy links
+  list-style-type: none;
+}
+
+.survey-box-link { //icons and show,hide,edit,destroy
+  color: $primary-color;
+  text-align: left;
+  a {
+    text-decoration: none;
+    color: $button-color;
+    text-transform: uppercase;
+    padding: .5em;
+    font-size: 1.2em;
+  }
+}
+
+#clipboard-user-survey-pg{ //clipboard icon
+  color: $primary-color;
 }
