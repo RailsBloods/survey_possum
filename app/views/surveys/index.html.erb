@@ -2,8 +2,6 @@
 
 <h1>Current Surveys</h1>
 
-
-  <!-- <section class = "all-the-surveys user-profile-page"> -->
       <ul class = "list-survey user-profile-page">
         <% @surveys.each do |survey| %>
         <li class = "survey-box user-profile page">
@@ -14,10 +12,10 @@
           <div class = "show-container"> <i class="fa fa-file-text-o fa-2x"></i> <%= link_to 'Show', survey %> </div>
           <div class = "edit-container"> <i class="fa fa-pencil-square-o fa-2x"></i> <%= link_to 'Edit', edit_survey_path(survey) %> </div>
           <div class = "destroy-container"> <i class="fa fa-trash fa-2x"></i> <%= link_to 'Destroy', survey, method: :delete, data: { confirm: 'Are you sure?' } %> </div>
+          <div class = "show-container"> <i class="fa fa-file-text-o fa-2x"></i> <%= link_to 'View Results', answers_path(survey_id: survey.id) %> </div>
         </li>
         <% end %>
       </ul>
-  <!-- </section> -->
 
 
 <%= link_to 'New Survey', new_survey_path %>
