@@ -2,19 +2,20 @@
 
 <h1>Current Surveys</h1>
 
-      <ul class = "list-survey user-profile-page">
+      <ol class = "list-survey user-profile-page">
         <% @surveys.each do |survey| %>
         <li class = "survey-box user-profile page">
           <i class="fa fa-clipboard fa-3x"></i>
           <h2 class = "survey-title user-profile-page"><%= survey.title %></h2>
           <h4 class = "survey-description user-profile-page"><%= survey.description %></h4>
           <h5 class = "survey-userid user-profile-page"><%= survey.user_id %></h5>
-          <div class = "show-container user-profile-page"> <i class="fa fa-file-text-o fa-2x"></i> <%= link_to 'Show', survey %> </div>
-          <div class = "edit-container user-profile page"> <i class="fa fa-pencil-square-o fa-2x"></i> <%= link_to 'Edit', edit_survey_path(survey) %> </div>
-          <div class = "destroy-container user-profile-page"> <i class="fa fa-trash fa-2x"></i> <%= link_to 'Destroy', survey, method: :delete, data: { confirm: 'Are you sure?' } %> </div>
+          <div class = "show-container"> <i class="fa fa-file-text-o fa-2x"></i> <%= link_to 'Show', survey %> </div>
+          <div class = "edit-container"> <i class="fa fa-pencil-square-o fa-2x"></i> <%= link_to 'Edit', edit_survey_path(survey) %> </div>
+          <div class = "destroy-container"> <i class="fa fa-trash fa-2x"></i> <%= link_to 'Destroy', survey, method: :delete, data: { confirm: 'Are you sure?' } %> </div>
+          <div class = "show-container"> <i class="fa fa-file-text-o fa-2x"></i> <%= link_to 'View Results', answers_path(survey_id: survey.id) %> </div>
         </li>
         <% end %>
-      </ul>
+      </ol>
 
 
 <%= link_to 'New Survey', new_survey_path %>

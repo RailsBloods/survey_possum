@@ -1,9 +1,15 @@
 class AnswersController < ApplicationController
+  before_action :logged_in?
   before_action :set_answer, only: [:show, :edit, :update, :destroy]
 
   # GET /answers
   def index
-    @answers = Answer.all
+    @survey = Survey.find(params[:survey_id])
+    if @survey.user_id == session[:user_id]
+      @answers = Answer.all
+    else
+      redirect_to surveys_path, notice: 'You do not have access to those answers.'
+    end
   end
 
   # GET /answers/1
@@ -21,13 +27,13 @@ class AnswersController < ApplicationController
 
   # POST /answers
   def create
-    @answer = Answer.new(answer_params)
-
-    if @answer.save
-      redirect_to @answer, notice: 'Answer was successfully created.'
-    else
-      render :new
+    answers = params[:survey][:answers_attributes]
+    answers.each do |a|
+      response = a[1]
+      Answer.create!(question_number: (a[0].to_i + 1), question_response: response["question_response"], question_id: response["question_id"])
     end
+
+    redirect_to root_path, notice: 'Survey was successfully submitted.'
   end
 
   # PATCH/PUT /answers/1

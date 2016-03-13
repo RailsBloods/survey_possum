@@ -5,7 +5,7 @@ class CreateQuestions < ActiveRecord::Migration
       t.integer :question_number
       t.text :question_text
       t.text :description
-      t.string :type
+      t.string :question_type
 
       t.timestamps null: false
     end

@@ -1,4 +1,6 @@
 class SessionsController < ApplicationController
+  def dashboard
+  end
   def new
   end
 

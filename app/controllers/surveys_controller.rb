@@ -1,15 +1,16 @@
 class SurveysController < ApplicationController
-  before_action :logged_in?
-  before_action :set_survey, only: [:show, :edit, :update, :destroy]
+  before_action :logged_in?, except: [:show]
+  before_action :set_survey, only: [:edit, :update, :destroy]
 
   # GET /surveys
   def index
-    @surveys = Survey.all
+    @surveys = Survey.where(user_id: session[:user_id])
   end
 
   # GET /surveys/1
   def show
-    @answers = Answer.new
+    @survey = Survey.find(params[:id])
+    @survey.answers.build
   end
 
   # GET /surveys/new
@@ -53,12 +54,16 @@ class SurveysController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_survey
       @survey = Survey.find(params[:id])
+      unless @survey.user_id == session[:user_id]
+        redirect_to root_path
+      end
     end
 
     # Only allow a trusted parameter "white list" through.
     def survey_params
       params.require(:survey).permit(:title, :description, :user_id,
-          questions_attributes: [:id, :question_type, :question_number, :question_text, :response, :description, :_destroy])
+          questions_attributes: [:id, :question_type, :question_number, :question_text, :response, :description, :_destroy,
+            answers_attributes: [:id, :question_number, :question_response, :taker_id, :_destroy]])
     end
 
 end
