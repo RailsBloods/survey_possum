@@ -2,7 +2,7 @@
 
 <h1>Current Surveys</h1>
 
-      <ol class = "list-survey user-profile-page">
+      <ul class = "list-survey user-profile-page">
         <% @surveys.each do |survey| %>
         <li class = "survey-box user-profile page">
           <i class="fa fa-clipboard fa-3x"></i>
@@ -15,7 +15,7 @@
           <div class = "show-container"> <i class="fa fa-file-text-o fa-2x"></i> <%= link_to 'View Results', answers_path(survey_id: survey.id) %> </div>
         </li>
         <% end %>
-      </ol>
+      </ul>
 
 
 <%= link_to 'New Survey', new_survey_path %>
