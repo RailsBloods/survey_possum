@@ -12,3 +12,21 @@
 //
 //
 // });//end of line
+
+$(function(){
+'use strict';
+
+
+  $('#survey-menu-bar').click(function(){
+    $('.left-survey-nav').toggleClass('show');
+    console.log("this works");
+  })
+
+  $('.survey-box').hover(function(){
+    $(this).toggleClass('hover');
+    $(this).children().toggleClass('hover');
+  });
+
+
+
+});
