@@ -14,7 +14,7 @@
 
   <tbody>
     <% @answers.each do |answer| %>
-      <% if answer.question.survey.id.to_i == @survey.id.to_i %>
+      <% if answer.question.survey.id== @survey.id %>
         <tr>
           <td><%= answer.question_number %></td>
           <td><%= answer.question.question_text %></td>

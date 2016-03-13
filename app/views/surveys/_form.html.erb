@@ -28,21 +28,22 @@
      <%= f.fields_for :questions do |ff| %>
       <li class = "question-selector">
             <%= ff.number_field :question_number, placeholder: "Question Number" %>
-            <%= ff.select :question_type, [nil, 'Yes/No', 'Short Answer', 'Long Answer'] %>
+            <%= ff.select :question_type, ['Yes/No', 'Short Answer', 'Long Answer'], prompt: "Question Type" %>
             <%= ff.text_field :question_text, placeholder: "Question" %>
             <%= ff.text_area :description, placeholder: "Description (Optional)" %>
          </li>
       <% end %>
    </ol>
 
+  <div class = "question-button">Add Question</div>
+
 
   <%= f.label :publish, "Ready to publish?" %>
   <%= f.check_box :publish%>
 
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Submit" %>
   </div>
-  <div class = "question-button">Add Question</div>
 
 <% end %>
 
