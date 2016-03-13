@@ -55,7 +55,7 @@ class SurveysController < ApplicationController
     def set_survey
       @survey = Survey.find(params[:id])
       unless @survey.user_id == session[:user_id]
-        redirect_to :back
+        redirect_to root_path
       end
     end
 

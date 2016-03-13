@@ -112,10 +112,12 @@ body {
    color: $font-color;
 }
 
-#landing-page-form {
-   width: 30%;
-   line-height: 2em;
-}
+//this is the log-in form, but I"m going to flex box this with the other landing page cards
+// #landing-page-form {
+//    display: flex;
+//    line-height: 2em;
+//    flex-direction: row;
+// }
 
 #landing-page-form h1 {
    text-align: center;
@@ -131,4 +133,21 @@ form {
    border: none;
    border-radius: 3px;
    padding: 0.5em;
+}
+
+.landing-page-card {
+   display: inline-block;
+   width: 32.5%;
+   line-height: 2em;
+}
+
+.card {
+   text-align: center;
+   border-left: 1px solid $font-color;
+}
+
+.card > ul li {
+   list-style: none;
+   line-height: 1.5em;
+   font-size: 1em;
 }
