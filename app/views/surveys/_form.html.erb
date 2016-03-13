@@ -28,7 +28,7 @@
      <%= f.fields_for :questions do |ff| %>
       <li class = "question-selector">
             <%= ff.number_field :question_number, placeholder: "Question Number" %>
-            <%= ff.select :question_type, ['Yes/No', 'Short Answer', 'Long Answer'] %>
+            <%= ff.select :question_type, [nil, 'Yes/No', 'Short Answer', 'Long Answer'] %>
             <%= ff.text_field :question_text, placeholder: "Question" %>
             <%= ff.text_area :description, placeholder: "Description (Optional)" %>
          </li>

@@ -3,7 +3,7 @@ class AnswersController < ApplicationController
 
   # GET /answers
   def index
-    @survey = params[:survey]
+    @survey_id = params[:survey_id]
     @answers = Answer.all
   end
 
