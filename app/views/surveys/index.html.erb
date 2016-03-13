@@ -2,8 +2,6 @@
 
 <h1>Current Surveys</h1>
 
-
-  <!-- <section class = "all-the-surveys user-profile-page"> -->
       <ul class = "list-survey user-profile-page">
         <% @surveys.each do |survey| %>
         <li class = "survey-box user-profile page">
@@ -18,7 +16,6 @@
         </li>
         <% end %>
       </ul>
-  <!-- </section> -->
 
 
 <%= link_to 'New Survey', new_survey_path %>
