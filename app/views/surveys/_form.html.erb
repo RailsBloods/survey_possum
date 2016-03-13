@@ -24,10 +24,10 @@
   </div>
 
   <h3>Questions</h3>
-    <ol class = "unordered-list">
+    <ol class = "ordered-list">
      <%= f.fields_for :questions do |ff| %>
       <li class = "question-selector">
-            <%= ff.number_field :question_number, placeholder: "Question Number" %>
+            <%= ff.number_field :question_number, placeholder: "Question Number" %><span class = "remove-button">x</span>
             <%= ff.select :question_type, ['Yes/No', 'Short Answer', 'Long Answer'], prompt: "Question Type" %>
             <%= ff.text_field :question_text, placeholder: "Question" %>
             <%= ff.text_area :description, placeholder: "Description (Optional)" %>
@@ -36,6 +36,7 @@
    </ol>
 
   <div class = "question-button">Add Question</div>
+
 
 
   <%= f.label :publish, "Ready to publish?" %>
@@ -47,7 +48,7 @@
 
 <% end %>
 
-<script>
+<!-- <script>
 
 $(function(){
 'use strict';
@@ -59,6 +60,6 @@ $(".question-button").on("click", function(){
    clickCounter++;
    console.log(clickCounter);
 });
+});
 
-
-</script>
+</script> -->

@@ -151,3 +151,41 @@ form {
    line-height: 1.5em;
    font-size: 1em;
 }
+
+// Styling for Build Survey Page
+
+.button {
+   background-color: $button-color;
+   color: $background-color;
+   border: 3px solid $button-color;
+   border-radius: 3px;
+   cursor: pointer;
+}//this can be extented to all button elements, so they'll have the same look.
+//sizing elements will change depending on the button.
+
+.question-button {
+   @extend .button;
+   // text-align: center;
+   padding: 0.2em 0;
+   width: 40%;
+   margin-bottom: 1em;
+}
+
+.actions > input {
+   @extend .button;
+   padding: 0.3em 0.3em;
+   margin: auto;
+   font-size: 1em;
+   margin-top: 1em;
+}
+
+.remove-button {
+   @extend .button;
+   border: 1px solid $button-color;
+   padding: 0 0.1em;
+   margin-left: 6px;
+}
+
+textarea {
+   border: 1px solid $font-color;
+}
