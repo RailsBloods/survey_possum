@@ -33,6 +33,7 @@
         <li class = "question-selector form-page">
               <%= ff.number_field :question_number, placeholder: "Question Number" %>
               <%= ff.select :question_type, ['Yes/No', 'Short Answer', 'Long Answer'], prompt: "Question Type" %>
+              <span class = "remove-button">x</span>
               <%= ff.text_field :question_text, placeholder: "Question" %>
               <%= ff.text_area :description, placeholder: "Description (Optional)" %>
           </li>

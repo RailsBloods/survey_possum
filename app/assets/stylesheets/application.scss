@@ -155,7 +155,7 @@ form {
 
 .landing-page-card {
    display: inline-block;
-   width: 32.5%;
+   // width: 32.5%;
    line-height: 2em;
    .landing-page-header{
       font-size: 2em;
@@ -165,6 +165,7 @@ form {
 .card {
    text-align: center;
    border-left: 1px solid $font-color;
+   width: 32.5%;
 }
 
 .card > ul li {
@@ -186,9 +187,9 @@ form {
 
 .question-button {
    @extend .button;
-   // text-align: center;
+   text-align: center;
    padding: 0.2em 0;
-   width: 40%;
+   width: 8%;
    margin-bottom: 1em;
 }
 
@@ -203,7 +204,7 @@ form {
 .remove-button {
    @extend .button;
    border: 1px solid $button-color;
-   padding: 0 0.1em;
+   padding: 0 0.3em 0.1em 0.3em;
    margin-left: 6px;
 }
 
