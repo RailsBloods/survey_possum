@@ -2,8 +2,9 @@
 
 <aside class = "left-nav-container survey-pages"><i id = "survey-menu-bar" class="fa fa-bars fa-3x"></i>
   <nav class = "left-survey-nav">
-    <div class = "survey-dashboard link-to-survey-dashboard"> ALL SURVEYS </div>
-    <div class = "survey-dashboard link-to-create-new"> CREATE NEW SURVEY </div>
+    <div class = "survey-dashboard link-to-survey-dashboard"> <%= link_to 'Survey Page', surveys_path, { class: 'header-link'} %> </div>
+    <div class = "survey-dashboard link-to-create-new"> <%= link_to 'New Survey', new_survey_path %>
+</div>
     <div class = "survey-dashboard link-to-templates"> TEMPLATES </div>
     <div class = "survey-dashboard link-to-account-info"> ACCOUNT </div>
   </nav>
@@ -16,7 +17,6 @@
           <i id = "clipboard-user-survey-pg" class="fa fa-clipboard fa-3x"></i>
           <h2 class = "survey-title user-profile-page"><%= survey.title %></h2>
           <h4 class = "survey-description user-profile-page"><%= survey.description %></h4>
-          <h5 class = "survey-userid user-profile-page"><%= survey.user_id %></h5>
           <ul class = "all-survey-box-links">
             <li class = "show-container survey-box-link"> <i class="fa fa-file-text-o fa-2x"></i> <%= link_to 'Show', survey %> </li>
             <li class = "edit-container survey-box-link"> <i class="fa fa-pencil-square-o fa-2x"></i> <%= link_to 'Edit', edit_survey_path(survey) %> </li>
@@ -31,7 +31,7 @@
 <%= link_to 'New Survey', new_survey_path %>
 
 
-<script>
+<!-- <script>
   $(function(){
   'use strict';
 
@@ -50,4 +50,4 @@
 
   });
 
-</script>
+</script> -->

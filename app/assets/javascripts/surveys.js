@@ -14,4 +14,16 @@ $(".remove-button").on("click", function(){
 })//end of remove question item JS
 
 
-});//end of line
+  $('#survey-menu-bar').click(function(){
+    $('.left-survey-nav').toggleClass('show');
+    console.log("this works");
+  })
+
+  $('.survey-box').hover(function(){
+    $(this).toggleClass('hover');
+    $(this).children().toggleClass('hover');
+  });
+
+
+
+});
