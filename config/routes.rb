@@ -1,13 +1,12 @@
 Rails.application.routes.draw do
-  get 'taker/show'
+  root 'sessions#dashboard'
 
   resources :answers
   resources :questions
-
-  root 'sessions#dashboard'
-
   resources :surveys
   resources :users
+
+  get 'taker/show'
 
   get 'login' => 'sessions#new'
   post 'login' => 'sessions#create'
