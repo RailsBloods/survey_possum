@@ -32,6 +32,8 @@
         <li class = "question-selector form-page">
             <%= ff.number_field :question_number, placeholder: "Question #" %>
             <%= ff.select :question_type, ['Yes/No', 'Short Answer', 'Long Answer'], prompt: "Select Question Type" %>
+            <%= ff.label :required, "Is This Question Required?" %>
+            <%= ff.check_box :required %>
             <%= ff.text_field :question_text, placeholder: "What question do you want to ask?" %>
             <%= ff.text_area :description, placeholder: "Optional Description" %>
         </li>
