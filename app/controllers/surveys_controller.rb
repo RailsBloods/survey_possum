@@ -2,7 +2,6 @@ class SurveysController < ApplicationController
   before_action :logged_in?, except: [:show]
   before_action :set_survey, only: [:edit, :update, :destroy]
   before_action :survey_taken, only: [:edit]
-  validates :question_text, presence: true 
 
   # GET /surveys
   def index
