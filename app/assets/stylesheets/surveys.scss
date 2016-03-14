@@ -50,17 +50,17 @@ $breakpoints: (
   }
 }
 
-#survey-menu-bar { //menu icon
+#survey-menu-bar { //hamburger menu icon
   color: $button-color;
 }
 
-.left-survey-nav{ //container for left menu
+.left-survey-nav{ //container for left hamburger menu
   display: none;
   position: absolute;
   width: 100px;
 }
 
-.left-survey-nav.show { //shows left menu
+.left-survey-nav.show { //shows contents of hamburger menu
   position: absolute;
   display: block;
   width: 100px;
@@ -105,21 +105,25 @@ $breakpoints: (
   }
 }
 
-.survey-box.hover{
+.survey-box.hover{ //survey box change background color
   background-color: rgb(240,240,240);
 }
 
-.survey-title.user-profile-page.hover {
+.survey-title.user-profile-page.hover { //survey title change background color
   @extend .survey-box.hover;
   border-top: none;
   border-bottom: solid 3px $primary-color;
 }
 
-survey-description.hover {
+.survey-description{
+  visibility: hidden;
+}
+
+.survey-description.hover { //survey description show
   visibility: visible;
   @extend .survey-box.hover;
   text-align: center;
-  font-size: 1.5em;
+  font-size: 1em;
 }
 
 .survey-title.user-profile-page { //title of surveys
@@ -158,4 +162,106 @@ survey-description.hover {
 
 #clipboard-user-survey-pg{ //clipboard icon
   color: $primary-color;
+}
+
+//**** STYLES BELOW ARE FOR THE _form.html.erb FILE ****//
+
+.survey-form-container{ //container for survey form title and description
+  // float: left;
+  border: 3px solid $primary-color;
+  padding-left: 0;
+  // width: 400px;
+  width: $width-surveys;
+
+  input{
+    color: white;
+    width: 350px;
+    height: 50px;
+    font-size: 1.2em;
+    background-color: $primary-color;
+    border: 3px;
+    border-style: solid; /* gets rid of ugly bevel: http://stackoverflow.com/questions/12791631/remove-inner-shadow-of-text-input*/
+    margin-bottom: 1em;
+  }
+
+  textarea {
+    color: $font-color;
+    width: 350px;
+    height: 150px;
+  }
+
+  label {
+    text-transform: uppercase;
+    font-size: 1.2em;
+  }
+
+  // @include respond-to('medium') {
+  //   min-width: 850px;
+  //   max-width: 1000px;
+  // }
+  //
+  // @include respond-to('phone') {
+  //   max-width: 100%;
+  // }
+}
+
+.question-form-container {
+  // float: right;
+  // border: 1px solid black;
+}
+
+.surveys-ordered-list{ //container for the ordered list of questions
+  border: 3px solid $primary-color;
+  width: $width-surveys;
+  // width: 400px;
+  list-style-type: none;
+  padding-left: 0;
+
+  input{
+    color: white;
+    width: 350px;
+    height: 50px;
+    font-size: 1.2em;
+    background-color: $primary-color;
+    border: 3px;
+    border-style: solid; /* gets rid of ugly bevel: http://stackoverflow.com/questions/12791631/remove-inner-shadow-of-text-input*/
+    margin-bottom: 1em;
+  }
+
+  textarea {
+    color: $font-color;
+    width: 350px;
+    height: 150px;
+  }
+
+  select {
+    width: 350px;
+    -webkit-appearance: menulist-button; /*http://stackoverflow.com/questions/20656114/how-to-style-increase-the-height-of-select-box-in-css*/
+    height: 35px;
+    background-color: $button-color;
+    color: white;
+    font-size: 1em;
+  }
+
+  // @include respond-to('medium') {
+  //   min-width: 850px;
+  //   max-width: 1000px;
+  // }
+  //
+  // @include respond-to('phone') {
+  //   max-width: 100%;
+  // }
+}
+
+// .form-page-column{
+//   display: inline-block;
+// }
+
+::-webkit-input-placeholder {
+   color: white;
+}
+
+.question-title{
+  text-transform: uppercase;
+  font-size: 1.2em;
 }
