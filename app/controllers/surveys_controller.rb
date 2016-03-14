@@ -12,7 +12,10 @@ class SurveysController < ApplicationController
   def show
     @survey = Survey.find(params[:id])
     if @survey.publish == 1
-      @survey.answers.build
+      @taker = Taker.new
+      @survey.questions.each do |q|
+        @taker.answers.build(question_id: q.id)
+      end
     else
       redirect_to surveys_url
     end

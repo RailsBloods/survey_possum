@@ -27,13 +27,12 @@ class AnswersController < ApplicationController
 
   # POST /answers
   def create
-    answers = params[:survey][:answers_attributes]
-    answers.each do |a|
-      response = a[1]
-      Answer.create!(question_number: (a[0].to_i + 1), question_response: response["question_response"], question_id: response["question_id"])
+    @taker = Taker.new(taker_params)
+    if @taker.save
+      redirect_to root_path, notice: 'Survey was successfully submitted.'
+    else
+      redirect_to :back, notice: "Must answer required questions."
     end
-
-    redirect_to root_path, notice: 'Survey was successfully submitted.'
   end
 
   # PATCH/PUT /answers/1
@@ -60,5 +59,11 @@ class AnswersController < ApplicationController
     # Only allow a trusted parameter "white list" through.
     def answer_params
       params.require(:answer).permit(:question_number, :question_response, :taker_id, :question_id)
+    end
+
+    # Only allow a trusted parameter "white list" through.
+    def taker_params
+      params.require(:taker).permit(
+            answers_attributes: [:id, :question_number, :question_response, :taker_id, :_destroy, :question_id])
     end
 end
