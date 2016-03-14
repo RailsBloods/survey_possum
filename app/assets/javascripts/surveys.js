@@ -1,18 +1,20 @@
 $(function(){
 'use strict';
 
-//
+//hamburger menu
   $('#survey-menu-bar').click(function(){
     $('.left-survey-nav').toggleClass('show');
     console.log("this works");
   })
 
+//when you hover on a survey box, it changes
   $('.survey-box').hover(function(){
     $(this).toggleClass('hover');
     $(this).children().toggleClass('hover');
   });
 
 
+//adds a new question
   var clickCounter = 1;
   $(".question-button").on("click", function(){
      console.log('hello');
@@ -21,6 +23,10 @@ $(function(){
      console.log(clickCounter);
   });
 
+ //shuffles the question you click before the one before
+  $(".question-selector").click(function() {
+     $(this).insertBefore($(this).prev());
+  });
 
 
 });
