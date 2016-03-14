@@ -39,8 +39,40 @@ $breakpoints: (
 }
 
 // SOURCED FROM: http://sass-guidelin.es/#responsive-web-design-and-breakpoints
+//
+// body{
+//   margin-left: 0;
+//   padding-left: 0;
+//   padding-right: 0;
+// }
+
+.list-survey.user-profile-page{
+
+}
+
+.container-title-survey{ //hero image
+  margin-top: -1.3em;
+  width: 1324px;
+  height: 350px;
+  background-image: url("/assets/desk.jpeg");
+
+  @include respond-to('medium') {
+    width: 850px;
+  }
+
+  @include respond-to('phone') {
+    width: 100%;
+  }
+
+}
+
+// .title-survey-dashboard{
+//   font-family: 'Questrial', sans-serif;
+// }
 
 .title-survey-dashboard { //title of user profile page
+  color: white;
+  padding-top: 3em;
   text-align: center;
   margin-bottom: 1em;
 
@@ -64,7 +96,7 @@ $breakpoints: (
   position: absolute;
   display: block;
   width: 100px;
-  background-color: white;
+  // background-color: white;
 }
 
 
