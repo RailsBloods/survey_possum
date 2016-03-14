@@ -5,7 +5,7 @@ $(function(){
   $('#survey-menu-bar').click(function(){
     $('.left-survey-nav').toggleClass('show');
     console.log("this works");
-  })
+});
 
 //when you hover on a survey box, it changes
   $('.survey-box').hover(function(){
@@ -22,6 +22,11 @@ $(function(){
      clickCounter++;
      console.log(clickCounter);
   });
+
+  $(".remove-button").on("click", function(){
+     $(this).parent().remove();
+     console.log('this works');
+  });//end of remove question item JS
 
  //shuffles the question you click before the one before
   $(".fa-chevron-up").click(function() {
