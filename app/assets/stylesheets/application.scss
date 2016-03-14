@@ -54,15 +54,23 @@ html {
 
 .header-left-links {
    float: left;
+   font-family: 'Questrial', sans-serif;
+   text-transform: uppercase;
 }
 
 .header-right-links {
    float: right;
+   font-family: 'Questrial', sans-serif;
+   text-transform: uppercase;
+
 }
 
 .header-right-links > p{
    display: inline-block;
    color: white;
+   font-family: 'Questrial', sans-serif;
+   text-transform: uppercase;
+
 }
 
 .footer {
@@ -80,6 +88,8 @@ html {
 
 .footer-left-links {
    float: left;
+   font-family: 'Questrial', sans-serif;
+   text-transform: uppercase;
 }
 
 .footer-left-links > p {
@@ -90,19 +100,27 @@ html {
 .footer-right-links {
    @extend .header-right-links;
    color: $font-color;
+   font-family: 'Questrial', sans-serif;
+   text-transform: uppercase;
 
 }
 
 .footer-right-links > p {
    display: inline-block;
+   font-family: 'Questrial', sans-serif;
+   text-transform: uppercase;
 }
 
 .footer-right-links a {
    color: white;
+   font-family: 'Questrial', sans-serif;
+   text-transform: uppercase;
 }
 
 .footer-right-links a:hover {
    color: white;
+   font-family: 'Questrial', sans-serif;
+   text-transform: uppercase;
 }
 
 #logout a {
