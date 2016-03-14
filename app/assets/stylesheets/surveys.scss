@@ -167,9 +167,10 @@ $breakpoints: (
 //**** STYLES BELOW ARE FOR THE _form.html.erb FILE ****//
 
 .survey-form-container{ //container for survey form title and description
+  // float: left;
   border: 3px solid $primary-color;
-  display: block;
   padding-left: 0;
+  // width: 400px;
   width: $width-surveys;
 
   input{
@@ -194,19 +195,25 @@ $breakpoints: (
     font-size: 1.2em;
   }
 
-  @include respond-to('medium') {
-    min-width: 850px;
-    max-width: 1000px;
-  }
+  // @include respond-to('medium') {
+  //   min-width: 850px;
+  //   max-width: 1000px;
+  // }
+  //
+  // @include respond-to('phone') {
+  //   max-width: 100%;
+  // }
+}
 
-  @include respond-to('phone') {
-    max-width: 100%;
-  }
+.question-form-container {
+  // float: right;
+  // border: 1px solid black;
 }
 
 .surveys-ordered-list{ //container for the ordered list of questions
-  border: 1px solid black;
+  border: 3px solid $primary-color;
   width: $width-surveys;
+  // width: 400px;
   list-style-type: none;
   padding-left: 0;
 
@@ -236,20 +243,25 @@ $breakpoints: (
     font-size: 1em;
   }
 
-  @include respond-to('medium') {
-    min-width: 850px;
-    max-width: 1000px;
-  }
-
-  @include respond-to('phone') {
-    max-width: 100%;
-  }
+  // @include respond-to('medium') {
+  //   min-width: 850px;
+  //   max-width: 1000px;
+  // }
+  //
+  // @include respond-to('phone') {
+  //   max-width: 100%;
+  // }
 }
 
-.form-page-column{
-  display: inline-block;
-}
+// .form-page-column{
+//   display: inline-block;
+// }
 
 ::-webkit-input-placeholder {
    color: white;
+}
+
+.question-title{
+  text-transform: uppercase;
+  font-size: 1.2em;
 }
