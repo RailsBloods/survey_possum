@@ -62,37 +62,56 @@ $breakpoints: (
 
 }
 
-// .title-survey-dashboard{
-//   font-family: 'Questrial', sans-serif;
-// }
+
 
 .title-survey-dashboard { //title of user profile page
+  width: 300px;
+  font-family: 'Questrial', sans-serif;
+  font-size: 16px;
+  border: 2px solid white;
   color: white;
-  padding-top: 3em;
+  padding-top: 1em;
+  padding-bottom: 1em;
   text-align: center;
-  margin-bottom: 1em;
+  margin-left: 35%;
+  margin-top: 5%;
+
+  @include respond-to('medium') {
+    max-width: 900px;
+  }
 
   @include respond-to('phone') {
+    margin-left: 10%;
     max-width: 450px;
-    text-align: right;
   }
 }
 
 #survey-menu-bar { //hamburger menu icon
+  padding-left: 5px;
+  padding-top: 2px;
   color: $button-color;
 }
 
 .left-survey-nav{ //container for left hamburger menu
   display: none;
   position: absolute;
-  width: 100px;
+  width: 200px;
 }
 
 .left-survey-nav.show { //shows contents of hamburger menu
   position: absolute;
   display: block;
-  width: 100px;
-  // background-color: white;
+  width: 200px;
+  background-color: white;
+  border: 3px solid gray;
+  font-family: 'Questrial', sans-serif;
+  font-size: 1.5em;
+  text-transform: uppercase;
+}
+
+.survey-dashboard{
+  padding-left: 8px;
+  padding-top: 5px;
 }
 
 
@@ -141,6 +160,8 @@ $breakpoints: (
   @extend .survey-box.hover;
   border-top: none;
   border-bottom: solid 3px $primary-color;
+  font-family: 'Questrial', sans-serif;
+  font-size: 16px;
 }
 
 .survey-description{
@@ -157,6 +178,9 @@ $breakpoints: (
 .survey-title.user-profile-page { //title of surveys
   padding-top: 5px;
   width: $width-surveys/3.1;
+  font-family: 'Questrial', sans-serif;
+  font-size: 20px;
+  text-transform: uppercase;
   color: $font-color;
   border-top: solid 3px $primary-color;
   -webkit-transition: border 0.3s ease;
@@ -185,6 +209,7 @@ $breakpoints: (
     padding: .5em;
     font-size: 1.3em;
     font-weight: 700;
+    font-family: 'Questrial', sans-serif;
   }
 }
 
@@ -211,13 +236,16 @@ $breakpoints: (
     border: 3px;
     border-style: solid; /* gets rid of ugly bevel: http://stackoverflow.com/questions/12791631/remove-inner-shadow-of-text-input*/
     margin-bottom: 1em;
+    margin-right: 1em;
   }
 
   textarea {
     color: $font-color;
     width: 350px;
-    height: 100px;
+    height: 50px;
     font-size: 1.2em;
+    margin-bottom: -1.4em;
+    margin-left: 1em;
   }
 
   label {
@@ -225,25 +253,19 @@ $breakpoints: (
     font-size: 1.2em;
   }
 
-  // @include respond-to('medium') {
-  //   min-width: 850px;
-  //   max-width: 1000px;
-  // }
-  //
-  // @include respond-to('phone') {
-  //   max-width: 100%;
-  // }
+  @include respond-to('medium') {
+    width: 850px;
+    height: 100%;
+  }
+
+  @include respond-to('phone') {
+    width: 400px;
+  }
 }
 
-.question-form-container {
-  // float: right;
-  // border: 1px solid black;
-}
 
 .surveys-ordered-list{ //container for the ordered list of questions
-  // border: 3px solid $primary-color;
   width: $width-surveys;
-  // width: 400px;
   list-style-type: none;
   padding-left: 0;
 
@@ -251,7 +273,6 @@ $breakpoints: (
     margin-bottom: .5em;
     margin-top: 1em;
     color: white;
-    // width: 350px;
     width: 50px;
     height: 50px;
     font-size: 1.2em;
@@ -298,14 +319,15 @@ $breakpoints: (
     font-size: 1em;
   }
 
-  // @include respond-to('medium') {
-  //   min-width: 850px;
-  //   max-width: 1000px;
-  // }
-  //
-  // @include respond-to('phone') {
-  //   max-width: 100%;
-  // }
+  @include respond-to('medium') {
+    width: 850px;
+    height: 100%;
+  }
+
+  @include respond-to('phone') {
+    width: 400px;
+
+  }
 }
 
 .question-selector:nth-of-type(2n+1){
@@ -318,11 +340,12 @@ $breakpoints: (
   margin-bottom: 1em;
 }
 
-// .form-page-column{
-//   display: inline-block;
-// }
 
 .question-title{
   text-transform: uppercase;
   font-size: 1.2em;
+}
+
+.form-survey-title{
+  display: inline-block;
 }
