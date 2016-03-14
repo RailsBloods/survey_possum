@@ -89,10 +89,19 @@ html {
 
 .footer-right-links {
    @extend .header-right-links;
+   color: $font-color;
+
 }
 
 .footer-right-links > p {
    display: inline-block;
+}
+
+.footer-right-links a {
+   color: white;
+}
+
+.footer-right-links a:hover {
    color: white;
 }
 
@@ -104,6 +113,15 @@ html {
    display: inline;
 }
 
+a {
+   text-decoration: none;
+}
+
+a:hover {
+   background-color: $background-color;
+   color: $font-color;
+   text-decoration: underline;
+}
 
 // Log In Page:
 body {
@@ -152,7 +170,7 @@ form {
    font-size: 1em;
 }
 
-// Styling for Build Survey Page
+// Styling for Build Survey Page/Edit Survey Page
 
 .button {
    background-color: $button-color;
