@@ -10,6 +10,9 @@
 
 <p id="notice"><%= notice %></p>
 
+<h2>Your survey is ready!</h2>
+<h3>Please copy the URL on this page to share it or use the link here: <%= link_to "#{surveys_url}/#{@survey.id}" %></h3>
+
 <p>
   <strong>Survey Title:</strong>
   <%= @survey.title %>
@@ -44,7 +47,7 @@
   <% end %>
 
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Submit Responses"%>
   </div>
 
 <% end %>
