@@ -5,7 +5,7 @@ $(function(){
   $('#survey-menu-bar').click(function(){
     $('.left-survey-nav').toggleClass('show');
     console.log("this works");
-  })
+});
 
 //when you hover on a survey box, it changes
   $('.survey-box').hover(function(){
@@ -18,14 +18,23 @@ $(function(){
   var clickCounter = 1;
   $(".question-button").on("click", function(){
      console.log('hello');
-     $(".surveys-ordered-list").append('<li class="question-selector"><input placeholder="Question #" type="number" name="survey[questions_attributes]['+clickCounter+'][question_number]" id="survey_questions_attributes_'+clickCounter+'_question_number"><select name="survey[questions_attributes]['+clickCounter+'][question_type]" id="survey_questions_attributes_'+clickCounter+'_question_type"><option value="">Select Question Type</option><option value="Yes/No">Yes/No</option><option value="Short Answer">Short Answer</option><option value="Long Answer">Long Answer</option></select><input placeholder="What question do you want to ask?" type="text" name="survey[questions_attributes]['+clickCounter+'][question_text]" id="survey_questions_attributes_'+clickCounter+'_question_text"><textarea placeholder="Optional Description" name="survey[questions_attributes]['+clickCounter+'][description]" id="survey_questions_attributes_'+clickCounter+'_description"></textarea></li>');
+     $(".surveys-ordered-list").append('<li class="question-selector"><input placeholder="#" type="number" name="survey[questions_attributes]['+clickCounter+'][question_number]" id="survey_questions_attributes_'+clickCounter+'_question_number"><select name="survey[questions_attributes]['+clickCounter+'][question_type]" id="survey_questions_attributes_'+clickCounter+'_question_type"><option value="">Select Question Type</option><option value="Yes/No">Yes/No</option><option value="Short Answer">Short Answer</option><option value="Long Answer">Long Answer</option></select><i class="fa fa-chevron-up fa-2x"></i><i class="fa fa-chevron-down fa-2x"></i><span class = "remove-button">x</span><br><input placeholder="What question do you want to ask?" type="text" name="survey[questions_attributes]['+clickCounter+'][question_text]" id="survey_questions_attributes_'+clickCounter+'_question_text"><textarea placeholder="Optional Description" name="survey[questions_attributes]['+clickCounter+'][description]" id="survey_questions_attributes_'+clickCounter+'_description"></textarea></li>');
      clickCounter++;
      console.log(clickCounter);
   });
 
+  $(".remove-button").on("click", function(){
+     $(this).parent().remove();
+     console.log('this works');
+  });//end of remove question item JS
+
  //shuffles the question you click before the one before
-  $(".question-selector").click(function() {
-     $(this).insertBefore($(this).prev());
+  $(".fa-chevron-up").click(function() {
+    $(this).parents(".question-selector").insertBefore($(this).parents(".question-selector").prev());
+  });
+
+  $(".fa-chevron-down").click(function() {
+    $(this).parents(".question-selector").insertAfter($(this).parents(".question-selector").next());
   });
 
 

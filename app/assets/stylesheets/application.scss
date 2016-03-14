@@ -89,10 +89,19 @@ html {
 
 .footer-right-links {
    @extend .header-right-links;
+   color: $font-color;
+
 }
 
 .footer-right-links > p {
    display: inline-block;
+}
+
+.footer-right-links a {
+   color: white;
+}
+
+.footer-right-links a:hover {
    color: white;
 }
 
@@ -104,6 +113,15 @@ html {
    display: inline;
 }
 
+a {
+   text-decoration: none;
+}
+
+a:hover {
+   background-color: $background-color;
+   color: $font-color;
+   text-decoration: underline;
+}
 
 // Log In Page:
 body {
@@ -137,17 +155,59 @@ form {
 
 .landing-page-card {
    display: inline-block;
-   width: 32.5%;
+   // width: 32.5%;
    line-height: 2em;
+   .landing-page-header{
+      font-size: 2em;
+   }
 }
 
 .card {
    text-align: center;
    border-left: 1px solid $font-color;
+   width: 32.5%;
 }
 
 .card > ul li {
    list-style: none;
-   line-height: 1.5em;
+   line-height: 2em;
+   font-size: 1.5em;
+}
+
+// Styling for Build Survey Page/Edit Survey Page
+
+.button {
+   background-color: $button-color;
+   color: $background-color;
+   border: 3px solid $button-color;
+   border-radius: 3px;
+   cursor: pointer;
+}//this can be extented to all button elements, so they'll have the same look.
+//sizing elements will change depending on the button.
+
+.question-button {
+   @extend .button;
+   text-align: center;
+   padding: 0.2em 0;
+   width: 8%;
+   margin-bottom: 1em;
+}
+
+.actions > input {
+   @extend .button;
+   padding: 0.3em 0.3em;
+   margin: auto;
    font-size: 1em;
+   margin-top: 1em;
+}
+
+.remove-button {
+   @extend .button;
+   border: 1px solid $button-color;
+   padding: 0 0.3em 0.1em 0.3em;
+   margin-left: 6px;
+}
+
+textarea {
+   border: 1px solid $font-color;
 }
