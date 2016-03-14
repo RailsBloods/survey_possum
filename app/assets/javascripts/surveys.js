@@ -23,7 +23,8 @@ $(function(){
      console.log(clickCounter);
   });
 
-  $(".remove-button").on("click", function(){
+//Matt told me to target something persistent in the create list, rather than the newly created list item, and then my function will work. Props to him for this code.
+  $(".surveys-ordered-list").on("click", ".remove-button", function(){
      $(this).parent().remove();
      console.log('this works');
   });//end of remove question item JS
