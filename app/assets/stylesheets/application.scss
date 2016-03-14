@@ -157,6 +157,9 @@ form {
    display: inline-block;
    width: 32.5%;
    line-height: 2em;
+   .landing-page-header{
+      font-size: 2em;
+   }
 }
 
 .card {
@@ -166,8 +169,8 @@ form {
 
 .card > ul li {
    list-style: none;
-   line-height: 1.5em;
-   font-size: 1em;
+   line-height: 2em;
+   font-size: 1.5em;
 }
 
 // Styling for Build Survey Page/Edit Survey Page
