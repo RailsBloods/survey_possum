@@ -15,10 +15,12 @@
   <%= @survey.title %>
 </p>
 
-<p>
-  <strong>Survey Description:</strong>
-  <%= @survey.description %>
-</p>
+<% if @survey.description != "" %>
+  <p>
+    <strong>Survey Description:</strong>
+    <%= @survey.description %>
+  </p>
+<% end %>
 
 <%= form_for @survey, url: answers_path do |f| %>
   <% @survey.questions.each do |q| %>
