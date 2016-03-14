@@ -30,10 +30,10 @@
       <ol class = "surveys-ordered-list form-page">
        <%= f.fields_for :questions do |ff| %>
         <li class = "question-selector form-page">
-            <%= ff.number_field :question_number, placeholder: "Question Number" %>
-            <%= ff.select :question_type, ['Yes/No', 'Short Answer', 'Long Answer'], prompt: "Question Type" %>
-            <%= ff.text_field :question_text, placeholder: "Question" %>
-            <%= ff.text_area :description, placeholder: "Description (Optional)" %>
+            <%= ff.number_field :question_number, placeholder: "Question #" %>
+            <%= ff.select :question_type, ['Yes/No', 'Short Answer', 'Long Answer'], prompt: "Select Question Type" %>
+            <%= ff.text_field :question_text, placeholder: "What question do you want to ask?" %>
+            <%= ff.text_area :description, placeholder: "Optional Description" %>
         </li>
       <% end %>
      </ol>
