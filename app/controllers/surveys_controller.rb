@@ -1,6 +1,7 @@
 class SurveysController < ApplicationController
   before_action :logged_in?, except: [:show]
   before_action :set_survey, only: [:edit, :update, :destroy]
+  before_action :survey_taken, only: [:edit]
 
   # GET /surveys
   def index
@@ -25,7 +26,6 @@ class SurveysController < ApplicationController
 
   # GET /surveys/1/edit
   def edit
-    @survey.questions.build
   end
 
   # POST /surveys
@@ -59,7 +59,15 @@ class SurveysController < ApplicationController
     def set_survey
       @survey = Survey.find(params[:id])
       unless @survey.user_id == session[:user_id]
-        redirect_to :back
+        redirect_to root_path
+      end
+    end
+
+    def survey_taken
+      if @survey.answers != []
+        redirect_to surveys_path, notice: 'Survey has been taken and can not be edited'
+      else
+        @survey.questions.build
       end
     end
 

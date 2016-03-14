@@ -32,6 +32,7 @@ under app views layouts application.html.erb is going to be the main template pa
 is awesome.
 To Start The Server: `bin/rails server`
 To Migrate for the Server: `bin/rake db:migrate`
+To seed for the log in information: ``
 to make logins available again: `bin/rake db:seed`
 
 

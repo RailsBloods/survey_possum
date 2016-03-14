@@ -1,3 +1,13 @@
+<aside class = "left-nav-container survey-pages"><i id = "survey-menu-bar" class="fa fa-bars fa-3x"></i>
+  <nav class = "left-survey-nav">
+    <div class = "survey-dashboard link-to-survey-dashboard"> <%= link_to 'Survey Page', surveys_path, { class: 'header-link'} %> </div>
+    <div class = "survey-dashboard link-to-create-new"> <%= link_to 'New Survey', new_survey_path %>
+</div>
+    <div class = "survey-dashboard link-to-templates"> TEMPLATES </div>
+    <div class = "survey-dashboard link-to-account-info"> ACCOUNT </div>
+  </nav>
+</aside>
+
 <h1>Editing Survey</h1>
   <%if session[:user_id] == @survey.user_id%>
     <%= render 'form' %>

@@ -1,9 +1,15 @@
 class AnswersController < ApplicationController
+  before_action :logged_in?
   before_action :set_answer, only: [:show, :edit, :update, :destroy]
 
   # GET /answers
   def index
-    @answers = Answer.all
+    @survey = Survey.find(params[:survey_id])
+    if @survey.user_id == session[:user_id]
+      @answers = Answer.all
+    else
+      redirect_to surveys_path, notice: 'You do not have access to those answers.'
+    end
   end
 
   # GET /answers/1

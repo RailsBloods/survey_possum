@@ -11,36 +11,59 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
-  </div>
-  <div class="field">
-    <%= f.label "Survey Description (Optional)" %><br>
-    <%= f.text_area :description %>
-  </div>
-  <div class="field">
-    <%= f.hidden_field :user_id, value: session[:user_id] %><br>
-  </div>
-
-  <h3>Questions</h3>
-
-  <%= f.fields_for :questions do |ff| %>
-    <div>
-      <%= ff.number_field :question_number, placeholder: "Question Number" %>
-      <%= ff.select :question_type, ['Choose','Yes/No', 'Short Answer', 'Long Answer'] %>
-      <%= ff.text_field :question_text, placeholder: "Question" %>
-      <%= ff.text_area :description, placeholder: "Description (Optional)" %><br>
-      <%= ff.label :required, "Required" %>
-      <%= ff.check_box :required  %>
+  <section class = "survey-form-container form-page-column">
+    <div class="field form-survey-title">
+      <%= f.label :title %><br>
+      <%= f.text_field :title %>
     </div>
-  <% end %>
+    <div class="field form-survey-title">
+      <%= f.label "Survey Description (Optional)" %><br>
+      <%= f.text_area :description %>
+    </div>
+    <div class="field">
+      <%= f.hidden_field :user_id, value: session[:user_id] %><br>
+    </div>
+  </section>
+
+  <section class = "question-form-container form-page-column">
+  <h3 class = "question-title">Questions</h3>
+    <ol class = "surveys-ordered-list form-page">
+     <%= f.fields_for :questions do |ff| %>
+      <li class = "question-selector form-page">
+            <%= ff.number_field :question_number, placeholder: "Question Number" %>
+            <%= ff.select :question_type, ['Yes/No', 'Short Answer', 'Long Answer'], prompt: "Question Type" %>
+            <%= ff.text_field :question_text, placeholder: "Question" %>
+            <%= ff.text_area :description, placeholder: "Description (Optional)" %>
+        </li>
+      <% end %>
+   </ol>
+ </section>
+
+
+  <div class = "question-button">Add Question</div>
+
 
   <%= f.label :publish, "Ready to publish?" %>
   <%= f.check_box :publish %>
 
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Submit" %>
   </div>
 
 <% end %>
+
+<script>
+
+$(function(){
+'use strict';
+
+var clickCounter = 1;
+$(".question-button").on("click", function(){
+   console.log('hello');
+   $(".unordered-list").append('<li class="question-selector"><input placeholder="Question Number" type="number" name="survey[questions_attributes]['+clickCounter+'][question_number]" id="survey_questions_attributes_'+clickCounter+'_question_number"><select name="survey[questions_attributes]['+clickCounter+'][question_type]" id="survey_questions_attributes_'+clickCounter+'_question_type"><option value="Yes/No">Yes/No</option><option value="Short Answer">Short Answer</option><option value="Long Answer">Long Answer</option></select><input placeholder="Question" type="text" name="survey[questions_attributes]['+clickCounter+'][question_text]" id="survey_questions_attributes_'+clickCounter+'_question_text"><textarea placeholder="Description (Optional)" name="survey[questions_attributes]['+clickCounter+'][description]" id="survey_questions_attributes_'+clickCounter+'_description"></textarea></li>');
+   clickCounter++;
+   console.log(clickCounter);
+});
+
+});
+</script>

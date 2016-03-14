@@ -1,23 +1,56 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Current Surveys</h1>
 
-
-  <!-- <section class = "all-the-surveys user-profile-page"> -->
       <ul class = "list-survey user-profile-page">
+
+        <li class = "container-title-survey">
+            <aside class = "left-nav-container survey-pages"><i id = "survey-menu-bar" class="fa fa-bars fa-3x"></i>
+              <nav class = "left-survey-nav">
+                <div class = "survey-dashboard link-to-survey-dashboard"> <%= link_to 'Survey Page', surveys_path, { class: 'header-link'} %> </div>
+                <div class = "survey-dashboard link-to-create-new"> <%= link_to 'New Survey', new_survey_path %>
+            </div>
+                <div class = "survey-dashboard link-to-templates"> TEMPLATES </div>
+                <div class = "survey-dashboard link-to-account-info"> ACCOUNT </div>
+              </nav>
+            </aside>
+            <h1 class = "title-survey-dashboard user-profile-page">SURVEY DASHBOARD</h1>
+        </li>
         <% @surveys.each do |survey| %>
         <li class = "survey-box user-profile page">
-          <i class="fa fa-clipboard fa-3x"></i>
+          <i id = "clipboard-user-survey-pg" class="fa fa-clipboard fa-3x"></i>
           <h2 class = "survey-title user-profile-page"><%= survey.title %></h2>
           <h4 class = "survey-description user-profile-page"><%= survey.description %></h4>
-          <h5 class = "survey-userid user-profile-page"><%= survey.user_id %></h5>
-          <div class = "show-container"> <i class="fa fa-file-text-o fa-2x"></i> <%= link_to 'Show', survey %> </div>
-          <div class = "edit-container"> <i class="fa fa-pencil-square-o fa-2x"></i> <%= link_to 'Edit', edit_survey_path(survey) %> </div>
-          <div class = "destroy-container"> <i class="fa fa-trash fa-2x"></i> <%= link_to 'Destroy', survey, method: :delete, data: { confirm: 'Are you sure?' } %> </div>
+          <ul class = "all-survey-box-links">
+            <li class = "show-container survey-box-link"> <i class="fa fa-file-text-o fa-2x"></i> <%= link_to 'Show', survey %> </li>
+            <li class = "edit-container survey-box-link"> <i class="fa fa-pencil-square-o fa-2x"></i> <%= link_to 'Edit', edit_survey_path(survey) %> </li>
+            <li class = "destroy-container survey-box-link"> <i class="fa fa-trash fa-2x"></i> <%= link_to 'Destroy', survey, method: :delete, data: { confirm: 'Are you sure?' } %> </li>
+            <li class = "view-container survey-box-link"> <i class="fa fa-file-text-o fa-2x"></i> <%= link_to 'View Results', answers_path(survey_id: survey.id) %> </li>
+          </ul>
         </li>
         <% end %>
       </ul>
-  <!-- </section> -->
 
 
 <%= link_to 'New Survey', new_survey_path %>
+
+
+<!-- <script>
+  $(function(){
+  'use strict';
+
+
+    $('#survey-menu-bar').hover(function(){
+      $('.left-survey-nav').toggleClass('show');
+      console.log("this works");
+    })
+
+    $('.survey-box').hover(function(){
+      $(this).toggleClass('hover');
+      $(this).children().toggleClass('hover');
+    });
+
+
+
+  });
+
+</script> -->
