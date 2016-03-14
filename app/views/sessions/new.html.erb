@@ -2,7 +2,8 @@
 <p id="alert"><%= alert %></p>
 
 <h1>Welcome to Survey Possum!</h1>
-<h2>If you already have an account you may login below, otherwise please create an account here:</h2>
+<h2>If you already have an account you may login below, otherwise please create an account here:
+  <%= link_to 'Sign Up!', new_user_path %></h2>
 
 <p>Please login below.</p>
 
@@ -15,5 +16,3 @@
 
   <%= submit_tag "Log in" %>
 <% end %>
-
-<%= link_to 'Sign Up!', new_user_path %>
