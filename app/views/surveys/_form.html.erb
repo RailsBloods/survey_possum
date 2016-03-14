@@ -25,15 +25,20 @@
     </div>
   </section>
 
+
   <section class = "question-form-container form-page-column">
     <h3 class = "question-title">Questions</h3>
       <ol class = "surveys-ordered-list form-page">
        <%= f.fields_for :questions do |ff| %>
         <li class = "question-selector form-page">
-            <%= ff.number_field :question_number, placeholder: "Question #" %>
+            <%= ff.number_field :question_number, placeholder: "#" %>
             <%= ff.select :question_type, ['Yes/No', 'Short Answer', 'Long Answer'], prompt: "Select Question Type" %>
             <%= ff.label :required, "Is This Question Required?" %>
             <%= ff.check_box :required %>
+            <i class="fa fa-chevron-up fa-2x"></i>
+            <i class="fa fa-chevron-down fa-2x"></i>
+            <span class = "remove-button">x</span>
+            <br>
             <%= ff.text_field :question_text, placeholder: "What question do you want to ask?" %>
             <%= ff.text_area :description, placeholder: "Optional Description" %>
         </li>
@@ -42,7 +47,9 @@
  </section>
 
 
+
   <div class = "question-button">Add Question</div>
+
 
 
   <%= f.label :publish, "Ready to publish?" %>
