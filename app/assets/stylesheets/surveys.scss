@@ -54,7 +54,7 @@ $breakpoints: (
   margin-top: -1.3em;
   width: 1324px;
   height: 350px;
-  background-image: url("/assets/desk.jpeg");
+  background-image: image-url("desk.jpeg");
 
   @include respond-to('medium') {
     width: 850px;
