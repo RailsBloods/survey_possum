@@ -1,6 +1,7 @@
 class SurveysController < ApplicationController
   before_action :logged_in?, except: [:show]
   before_action :set_survey, only: [:edit, :update, :destroy]
+  before_action :survey_taken, only: [:edit]
 
   # GET /surveys
   def index
@@ -10,7 +11,11 @@ class SurveysController < ApplicationController
   # GET /surveys/1
   def show
     @survey = Survey.find(params[:id])
-    @survey.answers.build
+    if @survey.publish == 1
+      @survey.answers.build
+    else
+      redirect_to surveys_url
+    end
   end
 
   # GET /surveys/new
@@ -21,7 +26,6 @@ class SurveysController < ApplicationController
 
   # GET /surveys/1/edit
   def edit
-    @survey.questions.build
   end
 
   # POST /surveys
@@ -59,10 +63,18 @@ class SurveysController < ApplicationController
       end
     end
 
+    def survey_taken
+      if @survey.answers != []
+        redirect_to surveys_path, notice: 'Survey has been taken and can not be edited'
+      else
+        @survey.questions.build
+      end
+    end
+
     # Only allow a trusted parameter "white list" through.
     def survey_params
-      params.require(:survey).permit(:title, :description, :user_id,
-          questions_attributes: [:id, :question_type, :question_number, :question_text, :response, :description, :_destroy,
+      params.require(:survey).permit(:title, :description, :user_id, :publish,
+          questions_attributes: [:id, :question_type, :question_number, :question_text, :response, :description, :required, :_destroy,
             answers_attributes: [:id, :question_number, :question_response, :taker_id, :_destroy]])
     end
 

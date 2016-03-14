@@ -1,13 +1,3 @@
-<aside class = "left-nav-container survey-pages"><i id = "survey-menu-bar" class="fa fa-bars fa-3x"></i>
-  <nav class = "left-survey-nav">
-    <div class = "survey-dashboard link-to-survey-dashboard"> <%= link_to 'Survey Page', surveys_path, { class: 'header-link'} %> </div>
-    <div class = "survey-dashboard link-to-create-new"> <%= link_to 'New Survey', new_survey_path %>
-</div>
-    <div class = "survey-dashboard link-to-templates"> TEMPLATES </div>
-    <div class = "survey-dashboard link-to-account-info"> ACCOUNT </div>
-  </nav>
-</aside>
-
 <p id="notice"><%= notice %></p>
 
 <p>
@@ -15,12 +5,10 @@
   <%= @survey.title %>
 </p>
 
-<% if @survey.description != "" %>
-  <p>
-    <strong>Survey Description:</strong>
-    <%= @survey.description %>
-  </p>
-<% end %>
+<p>
+  <strong>Survey Description:</strong>
+  <%= @survey.description %>
+</p>
 
 <%= form_for @survey, url: answers_path do |f| %>
   <% @survey.questions.each do |q| %>
