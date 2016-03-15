@@ -1,3 +1,76 @@
 // Place all the styles related to the Sessions controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+$font-stack: 'Arimo', sans-serif;
+$background-color: white;
+$primary-color: rgb(0,150,136);
+$button-color: rgb(34,150,243);
+$font-color: rgb(117,117,128);
+$width-surveys: 1310px;
+$margin-surveys: 0;
+
+$breakpoints: (
+  'phone': (max-width: 700px),
+  'medium': (max-width: 1000px),
+  'large': (min-width: 1001px),
+);
+// SOURCED FROM: http://sass-guidelin.es/#responsive-web-design-and-breakpoints
+
+@mixin respond-to($breakpoint) {
+  $raw-query: map-get($breakpoints, $breakpoint);
+
+  @if $raw-query {
+    $query: if(
+      type-of($raw-query) == 'string',
+      unquote($raw-query),
+      inspect($raw-query)
+    );
+
+    @media #{$query} {
+      @content;
+    }
+  } @else {
+    @error 'No value found for `#{$breakpoint}`. '
+         + 'Please make sure it is defined in `$breakpoints` map.';
+  }
+}
+
+.hero-image{ //hero image
+  margin-top: -1.7em;
+  width: 1324px;
+  height: 350px;
+  background-image: image-url("desk.jpeg");
+
+  @include respond-to('medium') {
+    width: 850px;
+  }
+
+  @include respond-to('phone') {
+    width: 500px;
+  }
+
+}
+
+.title-hero-image { //title of user profile page
+  width: 300px;
+  font-family: 'Questrial', sans-serif;
+  font-size: 16px;
+  border: 2px solid white;
+  color: white;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  text-align: center;
+  margin-left: 35%;
+  margin-top: 5em;
+  position: absolute;
+
+  @include respond-to('medium') {
+    max-width: 900px;
+  }
+
+  @include respond-to('phone') {
+    margin-left: 20%;
+    max-width: 450px;
+  }
+}
