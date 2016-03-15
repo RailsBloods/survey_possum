@@ -78,3 +78,18 @@ $breakpoints: (
 .landing-page-header{
   font-family: 'Questrial', sans-serif;
 }
+
+.login-landing-page a{
+  background-color: $button-color;
+  color: white;
+  border: 3px solid $button-color;
+  border-radius: 3px;
+}
+
+.sign-up-landing-page a{
+  background-color: $button-color;
+  color: white;
+  border: 3px solid $button-color;
+  border-radius: 3px;
+
+}
