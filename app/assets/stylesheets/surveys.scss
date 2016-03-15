@@ -290,7 +290,8 @@ $breakpoints: (
     font-size: 1.2em;
     background-color: $primary-color;
     border: 3px;
-    border-style: solid; /* gets rid of ugly bevel: http://stackoverflow.com/questions/12791631/remove-inner-shadow-of-text-input*/
+    border-style: solid; /* gets rid of ugly bevel:
+     http://stackoverflow.com/questions/12791631/remove-inner-shadow-of-text-input*/
   }
 
   ::-webkit-input-placeholder {

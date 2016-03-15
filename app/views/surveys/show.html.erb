@@ -8,9 +8,11 @@
   </nav>
 </aside>
 
-<p id="notice"><%= notice %></p>
+<% if (@survey.user_id == session[:user_id]) && (@survey.publish == 1) %>
+ <h2>Your survey is ready!</h2>
+ <h3>Please copy the URL on this page to share it or use the link here: <%= link_to "#{surveys_url}/#{@survey.id}" %></h3>
+<% end %>
 
-<h3>Want to share this survey? <br /> Use this link: <%= link_to "#{surveys_url}/#{@survey.id}" %></h3>
 
 <p>
   <strong>Survey Title:</strong>
@@ -24,26 +26,27 @@
   </p>
 <% end %>
 
-<%= form_for @survey, url: answers_path do |f| %>
-  <% @survey.questions.each do |q| %>
-    <div>
-    <%= q.question_text %>
-    <%= q.description %>
-      <%= f.fields_for :answers, @survey.answers.build do |ff| %>
-        <% if q.question_type == "Yes/No" %>
-          <%= ff.label :question_response, 'Yes' %>
-          <%= ff.radio_button :question_response, 'Yes', :value => 'Yes'%>
-          <%= ff.label :question_response, 'No' %>
-          <%= ff.radio_button :question_response, 'No', :value => 'No' %>
-        <% elsif q.question_type == "Short Answer" %>
-          <%= ff.text_field :question_response, placeholder: 'Short Answer' %>
-        <% elsif q.question_type == "Long Answer" %>
-          <%= ff.text_area :question_response, placeholder: 'Long Answer' %>
-        <% end %>
-        <%= ff.hidden_field :question_id, value: q.id %>
+<%= form_for @taker, url: answers_path do |f| %>
+  <div>
+    <%= f.fields_for :answers do |ff| %>
+      <% q = ff.object.question %>
+      <%= q.question_text %>
+      <%= q.description %>
+      <% if q.question_type == "Yes/No" %>
+        <%= ff.label :question_response, 'Yes' %>
+        <%= ff.radio_button :question_response, 'Yes', :value => 'Yes'%>
+        <%= ff.label :question_response, 'No' %>
+        <%= ff.radio_button :question_response, 'No', :value => 'No' %>
+      <% elsif q.question_type == "Short Answer" %>
+        <%= ff.text_field :question_response, placeholder: 'Short Answer' %>
+      <% elsif q.question_type == "Long Answer" %>
+        <%= ff.text_area :question_response, placeholder: 'Long Answer' %>
       <% end %>
-    </div>
-  <% end %>
+      <%= ff.hidden_field :question_id, value: q.id %>
+      <%= ff.hidden_field :question_number, value: q.question_number %>
+      <br>
+    <% end %>
+  </div>
 
   <div class="actions">
     <%= f.submit "Submit Responses"%>
