@@ -79,6 +79,31 @@ $breakpoints: (
   font-family: 'Questrial', sans-serif;
 }
 
+.call-to-action a{
+  font-family: 'Questrial', sans-serif;
+  font-size: 1.5em;
+  background-color: $button-color;
+  color: white;
+  padding-top: .5em;
+  padding-bottom: .5em;
+  text-align: center;
+  margin-left: 42%;
+  margin-top: 8em;
+  width: 110px;
+  border-radius: 6px;
+  position: absolute;
+
+  @include respond-to('medium') {
+    max-width: 900px;
+  }
+
+  @include respond-to('phone') {
+    margin-left: 20%;
+    max-width: 450px;
+  }
+
+}
+
 .login-landing-page a{
   background-color: $button-color;
   color: white;
