@@ -33,11 +33,13 @@
         <li class = "question-selector form-page">
             <%= ff.number_field :question_number, placeholder: "#" %>
             <%= ff.select :question_type, ['Yes/No', 'Short Answer', 'Long Answer'], prompt: "Select Question Type" %>
-            <%= ff.label :required, "Is This Question Required?" %>
-            <%= ff.check_box :required %>
-            <i class="fa fa-chevron-up fa-2x"></i>
-            <i class="fa fa-chevron-down fa-2x"></i>
-            <span class = "remove-button">x</span>
+               <%= ff.label :required, "Is This Question Required?" %>
+               <span class = "question-required">
+                  <%= ff.check_box :required %>
+               </span>
+               <i class="fa fa-chevron-up fa-2x"></i>
+               <i class="fa fa-chevron-down fa-2x"></i>
+               <span class = "remove-button">x</span>
             <br>
             <%= ff.text_field :question_text, placeholder: "What question do you want to ask?" %>
             <%= ff.text_area :description, placeholder: "Optional Description" %>

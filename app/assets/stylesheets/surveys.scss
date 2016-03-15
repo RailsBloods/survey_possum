@@ -342,6 +342,17 @@ $breakpoints: (
   margin-bottom: 1em;
 }
 
+.question-required {
+   display: inline-block;
+   width: 4%;
+   position: absolute;
+   margin-top: 0.4em;
+   padding-right: 2em;
+}
+
+.fa-chevron-up {
+   margin-left: 2em;
+}
 
 .question-title{
   text-transform: uppercase;
