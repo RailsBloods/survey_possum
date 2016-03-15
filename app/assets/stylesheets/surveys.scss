@@ -57,7 +57,7 @@ $breakpoints: (
   }
 
   @include respond-to('phone') {
-    width: 100%;
+    width: 500px;
   }
 
 }
@@ -81,7 +81,8 @@ $breakpoints: (
   }
 
   @include respond-to('phone') {
-    margin-left: 10%;
+    margin-top: 10%;
+    margin-left: 20%;
     max-width: 450px;
   }
 }
@@ -128,7 +129,7 @@ $breakpoints: (
   }
 
   @include respond-to('phone') {
-    max-width: 100%;
+    max-width: 600px;
   }
 }
 
